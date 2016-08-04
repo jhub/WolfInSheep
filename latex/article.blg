@@ -1,18 +1,15 @@
-[0] Config.pm:340> INFO - This is Biber 2.4
-[1] Config.pm:343> INFO - Logfile is 'latex/article.blg'
-[77] biber:287> INFO - === Tue Aug  2, 2016, 15:44:32
-[185] Biber.pm:348> INFO - Reading 'latex/article.bcf'
-[338] Biber.pm:742> INFO - Found 27 citekeys in bib section 0
-[344] Biber.pm:3151> INFO - Processing section 0
-[376] Biber.pm:3308> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[388] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[396] bibtex.pm:974> INFO - Found BibTeX data source 'bibliography.bib'
-[472] Biber.pm:3308> INFO - Looking for bibtex format file 'library.bib' for section 0
-[729] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[918] bibtex.pm:974> INFO - Found BibTeX data source 'library.bib'
-[1372] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1373] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1373] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'en-US'
-[1373] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
-[1398] bbl.pm:519> INFO - Writing 'latex/article.bbl' with encoding 'ascii'
-[1669] bbl.pm:615> INFO - Output to latex/article.bbl
+[0] Config.pm:318> INFO - This is Biber 1.8
+[1] Config.pm:321> INFO - Logfile is 'latex/article.blg'
+[99] biber:275> INFO - === Thu Aug  4, 2016, 02:50:38
+[101] Biber.pm:333> INFO - Reading 'latex/article.bcf'
+[189] Biber.pm:630> INFO - Found 26 citekeys in bib section 0
+[214] Biber.pm:3053> INFO - Processing section 0
+[236] Biber.pm:3190> INFO - Looking for bibtex format file 'jprefwolf.bib' for section 0
+[242] bibtex.pm:808> INFO - Found BibTeX data source 'jprefwolf.bib'
+[270] Biber.pm:3190> INFO - Looking for bibtex format file 'mwrefwolf.bib' for section 0
+[280] bibtex.pm:808> INFO - Found BibTeX data source 'mwrefwolf.bib'
+[382] Biber.pm:2939> INFO - Overriding locale 'en_US.UTF-8' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[383] Biber.pm:2945> INFO - Sorting 'entry' list 'none' keys
+[383] Biber.pm:2949> INFO - No sort tailoring available for locale 'en_US.UTF-8'
+[448] bbl.pm:482> INFO - Writing 'latex/article.bbl' with encoding 'ascii'
+[460] bbl.pm:555> INFO - Output to latex/article.bbl

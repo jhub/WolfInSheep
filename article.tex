@@ -2,8 +2,8 @@
 \usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
 \usepackage[backend=biber, style=ieee]{biblatex}
-%\addbibresource{jprefwolf.bib}
-%\addbibresource{mwrefwolf.bib}
+\addbibresource{jprefwolf.bib}
+\addbibresource{mwrefwolf.bib}
 \usepackage{amsmath}
 \usepackage[final]{microtype}
 \usepackage{caption}
@@ -76,9 +76,7 @@ The abstract goes here.
 \section{Introduction}
 With drones in land, air and sea coming into the growing consumer and private markets,l a closer look at the security involved in groups of these machines must be made. Robot security has landed headlines across a variety of commonly used devices, car hacking having a prominent impact in the United States and abroad. In the past few years individuals have been able to remotely connect to, disable, and control various vehicles in the market through techniques like that of Greenber et al \cite{greenberg2015hackers}. As more agents become connected, in this case vehicles in a highway, the decisions that each agent must make are based on the information it obtains from its sensors and other agent's data. This paper discusses how an agent can securely obtain the probability that another agent in the system is compromised.
 
-Although a system can be tampered with internally 
-
-Chain of trusts has been established in the previous works to combat the issue of impersonation, many providing approaches to protecting against malicious alterations to the system. This paper provides three elements of a chain of trust expands on the trust acquired by a robot's individual assessment of new and existing agents by means of communication, state detection and distributed state estimation. The root of trust however relies in a HSE unit which fingerprints specific physical properties and uniquely identifies an agent.
+There are three core goals for the security of any cyber-physical system: integrity, availability, and confidentiality \cite{Cardenas2008}. Those can be thought of as three simple questions: "Can I trust the data?", "Do I have access to the data when I need it?", and "Is the data hidden from those who shouldn't have it?". A system can be tampered through internal and external means. Physical and software components can both be compromised for any given agent internally whereas agents' communications and sensor data are both vulnerable to manipulation externally. We examine the case of external means by first developing a secure channel of communication, then utilizing State estimation and Secure state estimation to obtain a robot's individual assessment of the likelyhood of a robot in questing being compromised. We thus define our threat model further in the first part of the methodology after detailing related works for each of the three components developed. These three components are part of a larger chain of trust that verifies that the internal part of an agent is not compromised by a HSE unit which fingerprints specific physical properties and uniquely identifies an agent.
 
 \section{Related Work}
 Chain of trusts, as pertaining to cyber systems, have been introduced in works such as \cite{adi2009mechatronic} where a DNA clone resistant approach is taken throughout; a Physical Unclonable Function (PUF) was introduced which obtains physical differences between other electronic devices. Similar to this work the extended chain of trust this paper is part of a larger work which incorporates a Hardware Secure Enclosure (HSE) which is used to provide a unique hardware signature used to verify other parts of the system much like \cite{adi2009mechatronic}.
@@ -93,7 +91,7 @@ However, the \gls{kf} is best used for a linear system. Thus, plain \glspl{kf} a
 A \gls{ukf} was chosen to be implemented for this paper, however many of the statements here regarding the filters can be applied to \glspl{ekf} as well. Our chosen software package also makes it trivially easy to switch between a \gls{ukf} and \gls{ukf}. For the remainder of this article, we will use the generic term \glspl{kf}, demonstrating the fact that these statements apply to both \glspl{ukf} and \glspl{ekf}.
 
 \subsection{Secure State Estimation}
-There are three core goals for the security of any cyber-physical system: integrity, availability, and confidentiality \cite{Cardenas2008}. Those can be thought of as three simple questions: "Can I trust the data?", "Do I have access to the data when I need it?", and "Is the data hidden from those who shouldn't have it?". Secure state estimation requires a focus on all three of these pieces.
+Secure State Estimation requires a focus on all three of these pieces.
 
 \subsubsection{Integrity}
 The accuracy of a \gls{kf} when the sensors are functioning property is not in question, so we must look at when the sensors are not functioning properly. This leads to two possible scenarios, sensor failure and false data injection.
@@ -130,13 +128,17 @@ The previously mentioned works are all examples of a decentralized, rather than 
 
 \subsection{State Detection}
 
-In order to obtain behavior that is expected and not expected different types of planning have been introduced in literature. Complex environments can be made up of many possible paths which can be computed with strategies such as that of \cite{tallavajhulalist}, where each iteration of path planning uses a more complex predictor. Each of these predictors' path can be used to build a map of states and corresponding behavior that an agent is able to perform. 
-Other planning algorithms use specialized planning based on a sub process task such as \cite{bridge2008robust}'s vertical control system, where one module is independently responsible to avoiding objects while more abstract modules can plan according to behavior of objects. Such planning can also be implemented into a map of acceptable behaviors for each state. Multiple goal resolution is attractive as it may still be used in the evaluation of an observed behavior discussed in III.B .
+In order to obtain behavior that is expected and not expected different types of planning have been introduced in literature. Complex environments can be made up of many possible paths which can be computed with strategies such as that of \cite{tallavajhula2016list}, where each iteration of path planning uses a more complex predictor. Each of these predictors' path can be used to build a map of states and corresponding behavior that an agent is able to perform. 
+Other planning algorithms use specialized planning based on a sub process task such as \cite{ahn2008robust}'s vertical control system, where one module is independently responsible to avoiding objects while more abstract modules can plan according to behavior of objects. Such planning can also be implemented into a map of acceptable behaviors for each state. Multiple goal resolution is attractive as it may still be used in the evaluation of an observed behavior discussed in III.B .
 
 \section{Methodology}
 
 The method in which the three strategies of interest are implemented are now outlined. The reader should make note the intended chain of trust commences with hardware integrity at its core moving through the various levels of authentication for self-verification. 
 Once the agent can verify its own state it then proceeds to estimate the likelihood that other agents are taking an appropriate actions. 
+
+\subsection{Threat Model}
+
+[INSERT THREAT MODEL]
 
 \subsection{Secure Ad-Hoc Channel Communication}
 
@@ -159,7 +161,7 @@ We start our state detection by defining our state and control:
 \hline
 State & Control\\
 \hline
-$x,y,\theta,v_f,v_theta$ & $a_f,a_\theta$\\
+$x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
 \hline
 \end{tabular}
 \end{center}
@@ -239,7 +241,7 @@ We have presented three components from a larger chain of trust that is designed
 
 We would like to thank Professors Murat C. Cavusoglu, Russell C. Jackson and Tipakorn Greigarn and for their time, support and guidance.
 
-%\printbibliography
+\printbibliography
 
 \end{document}
 

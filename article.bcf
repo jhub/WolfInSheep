@@ -1943,14 +1943,14 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">greenberg2015hackers</bcf:citekey>
-    <bcf:citekey order="2">Cardenas2008</bcf:citekey>
+    <bcf:citekey order="2">adi2009mechatronic</bcf:citekey>
     <bcf:citekey order="3">adi2009mechatronic</bcf:citekey>
-    <bcf:citekey order="4">adi2009mechatronic</bcf:citekey>
-    <bcf:citekey order="5">ProbabilisticRobotics</bcf:citekey>
-    <bcf:citekey order="6">Localization2003</bcf:citekey>
+    <bcf:citekey order="4">ProbabilisticRobotics</bcf:citekey>
+    <bcf:citekey order="5">Localization2003</bcf:citekey>
+    <bcf:citekey order="5">Mohsin2014</bcf:citekey>
     <bcf:citekey order="6">Mohsin2014</bcf:citekey>
-    <bcf:citekey order="7">Mohsin2014</bcf:citekey>
-    <bcf:citekey order="8">Julier1997</bcf:citekey>
+    <bcf:citekey order="7">Julier1997</bcf:citekey>
+    <bcf:citekey order="8">Cardenas2008</bcf:citekey>
     <bcf:citekey order="9">Mo2010</bcf:citekey>
     <bcf:citekey order="10">Yang2013</bcf:citekey>
     <bcf:citekey order="11">Bezzo_2014</bcf:citekey>
@@ -1972,8 +1972,8 @@
     <bcf:citekey order="27">Roumeliotis2002</bcf:citekey>
     <bcf:citekey order="28">Olfati-Saber2005</bcf:citekey>
     <bcf:citekey order="29">Olfati-Saber2005</bcf:citekey>
-    <bcf:citekey order="30">tallavajhula2016list</bcf:citekey>
-    <bcf:citekey order="31">ahn2008robust</bcf:citekey>
+    <bcf:citekey order="30">tallavajhulalist</bcf:citekey>
+    <bcf:citekey order="31">bridge2008robust</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" type="entry" label="none">
   <bcf:sorting>
