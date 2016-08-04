@@ -1,0 +1,18 @@
+[0] Config.pm:340> INFO - This is Biber 2.4
+[1] Config.pm:343> INFO - Logfile is 'latex/article.blg'
+[77] biber:287> INFO - === Tue Aug  2, 2016, 15:44:32
+[185] Biber.pm:348> INFO - Reading 'latex/article.bcf'
+[338] Biber.pm:742> INFO - Found 27 citekeys in bib section 0
+[344] Biber.pm:3151> INFO - Processing section 0
+[376] Biber.pm:3308> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[388] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[396] bibtex.pm:974> INFO - Found BibTeX data source 'bibliography.bib'
+[472] Biber.pm:3308> INFO - Looking for bibtex format file 'library.bib' for section 0
+[729] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[918] bibtex.pm:974> INFO - Found BibTeX data source 'library.bib'
+[1372] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1373] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1373] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'en-US'
+[1373] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
+[1398] bbl.pm:519> INFO - Writing 'latex/article.bbl' with encoding 'ascii'
+[1669] bbl.pm:615> INFO - Output to latex/article.bbl

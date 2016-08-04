@@ -1,0 +1,973 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global}
+    \entry{wagoner2015humanoid}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=c80188f6f2c91863e82e4561f06d1346}{%
+           family={Wagoner},
+           family_i={W\bibinitperiod},
+           given={Amy},
+           given_i={A\bibinitperiod}}}%
+        {{hash=3e51c7451eeb7d0367a055f72ae615c1}{%
+           family={Jagadish},
+           family_i={J\bibinitperiod},
+           given={Adith},
+           given_i={A\bibinitperiod}}}%
+        {{hash=28b79504ee434d83e8d8d35546b8d7e8}{%
+           family={Matson},
+           family_i={M\bibinitperiod},
+           given={Eric\bibnamedelima T},
+           given_i={E\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=b611d4d06f7afc87628b05c645635163}{%
+           family={EunSeop},
+           family_i={E\bibinitperiod},
+           given={Lee},
+           given_i={L\bibinitperiod}}}%
+        {{hash=03dfff3c93f41165271397095ed5e4e2}{%
+           family={Nah},
+           family_i={N\bibinitperiod},
+           given={Yoanna},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=e4a6bdaff07a8e22be8d2713c2fdeed3}{%
+           family={Tae},
+           family_i={T\bibinitperiod},
+           given={Kim\bibnamedelima Kyeong},
+           given_i={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=0baf20a76379ed581d4e765a3ba13bad}{%
+           family={Lee},
+           family_i={L\bibinitperiod},
+           given={Dong\bibnamedelima Hyung},
+           given_i={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=06c905a4f3e686719082b240312a8b51}{%
+           family={Joeng},
+           family_i={J\bibinitperiod},
+           given={Ju-Eun},
+           given_i={J\bibinithyphendelim E\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{8aacd67ab1d544ba3dea122983988b61}
+      \strng{fullhash}{8b7e05da89050b2a8775529631fbbf0e}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Automation, Robotics and Applications (ICARA), 2015 6th International Conference on}
+      \field{title}{Humanoid robots rescuing humans and extinguishing fires for cooperative fire security system using harms}
+      \field{year}{2015}
+      \field{pages}{411\bibrangedash 415}
+      \range{pages}{5}
+    \endentry
+    \entry{wilson2014ethical}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=6814456864bb336cab4824f924207fd4}{%
+           family={Wilson},
+           family_i={W\bibinitperiod},
+           given={Richard\bibnamedelima L},
+           given_i={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6814456864bb336cab4824f924207fd4}
+      \strng{fullhash}{6814456864bb336cab4824f924207fd4}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Ethics in Science, Technology and Engineering, 2014 IEEE International Symposium on}
+      \field{title}{Ethical issues with use of drone aircraft}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+    \endentry
+    \entry{adi2009mechatronic}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=56776998ed29707de927c3691e21ef94}{%
+           family={Adi},
+           family_i={A\bibinitperiod},
+           given={Wael},
+           given_i={W\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{56776998ed29707de927c3691e21ef94}
+      \strng{fullhash}{56776998ed29707de927c3691e21ef94}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{BLISS}
+      \field{title}{Mechatronic Security and Robot Authentication.}
+      \field{year}{2009}
+      \field{pages}{77\bibrangedash 82}
+      \range{pages}{6}
+    \endentry
+    \entry{ProbabilisticRobotics}{book}{}
+      \name{author}{3}{}{%
+        {{hash=5112ea130eadef0764fce0145b8b9f91}{%
+           family={Thrun},
+           family_i={T\bibinitperiod},
+           given={Sebastian},
+           given_i={S\bibinitperiod}}}%
+        {{hash=98f4ab1bc2ac191d8f8a0651315ce9c0}{%
+           family={Burgard},
+           family_i={B\bibinitperiod},
+           given={Wolfram},
+           given_i={W\bibinitperiod}}}%
+        {{hash=93b0c4a7857a82a8f94e256475887c74}{%
+           family={Fox},
+           family_i={F\bibinitperiod},
+           given={Dieter},
+           given_i={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The MIT Press}%
+      }
+      \strng{namehash}{cb3e97dbc1e8d4a631a5b656776c23d3}
+      \strng{fullhash}{cb3e97dbc1e8d4a631a5b656776c23d3}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{isbn}{0262201623}
+      \field{month}{10}
+      \field{title}{Probabilistic Robotics}
+      \field{year}{2005}
+    \endentry
+    \entry{Localization2003}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=21d242b95d0d7f57ffe0fabc4c568902}{%
+           family={Negenborn},
+           family_i={N\bibinitperiod},
+           given={Rudy},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Utrecht University}%
+      }
+      \strng{namehash}{21d242b95d0d7f57ffe0fabc4c568902}
+      \strng{fullhash}{21d242b95d0d7f57ffe0fabc4c568902}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The robot localization problem is a key problem in making truly autonomous robots. If a robot does not know where it is, it can be difficult to determine what to do next. In order to localize itself, a robot has access to relative and absolute measurements giving the robot feedback about its driving actions and the situation of the environment around the robot. Given this informa- tion, the robot has to determine its location as accurately as possible. What makes this difficult is the existence of uncertainty in both the driving and the sensing of the robot. The uncertain information needs to be combined in an optimal way. The Kalman Filter is a technique from estimation theory that combines the information of different uncertain sources to obtain the values of vari- ables of interest together with the uncertainty in these. The filter has been successfully applied in many applications, like missions to Mars, and auto- mated missile guidance systems. Although the concept of the filter is rel- atively easy to comprehend, the advantages and shortcomings can only be understood well with knowledge of the pure basics and with experience. In this work we provide a thorough discussion of the robot localization problem and Kalman Filter techniques. First, we look at current methods to obtain location information, pointing out advantages and disadvantages. We formalize how to combine this information in a probabilistic framework and discuss several currently used methods that implement it. Second, we look at the basic concepts involved in Kalman Filters and derive the equations of the basic filter and commonly used extensions. We create understanding of the workings, while discussing the differences between the extensions. Third, we discuss and experimentally show how Kalman Filters can be applied to the localization problem. We look at system and measurement models that are needed by the filter; that is, we model a driving system, a GPS-like sensor, and a landmark-based sensor. We perform simulations using these models in our own general Kalman Filter simulator showing different behaviors when applying the Kalman Filter to the localization problem. In order to use the landmark-based sensor when it can not uniquely identify landmarks, we extend the Kalman Filter to allow for multiple beliefs. The material presented in this work forms a basis for further studies in localization literature, application of Kalman Filters in any domain, and in particular practical application of Kalman Filters and localization on physical robots.}
+      \field{day}{01}
+      \field{month}{09}
+      \field{subtitle}{On finding your position in a noisy world}
+      \field{title}{Robot Localization and Kalman Filters}
+      \field{type}{mathesis}
+      \field{year}{2003}
+      \verb{file}
+      \verb :LocalizationThesis.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Mohsin2014}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=55a7234824b234d44af96684f9b31d62}{%
+           family={Mohsin},
+           family_i={M\bibinitperiod},
+           given={Omar\bibnamedelima Q.},
+           given_i={O\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Portland State University}%
+      }
+      \strng{namehash}{55a7234824b234d44af96684f9b31d62}
+      \strng{fullhash}{55a7234824b234d44af96684f9b31d62}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Robot localization is one of the most important subjects in the Robotics science. It is an interesting and complicated topic. There are many algorithms to solve the problem of localization. Each localization system has its own set of features, and based on them, a solution will be chosen. In my thesis, I want to present a solution to find the best estimate for a robot position in certain space for which a map is available. The thesis started with an elementary introduction to the probability and the Gaussian theories. Simple and advanced practical examples are presented to illustrate each concept related to localization. Extended Kalman Filter is chosen to be the main algorithm to find the best estimate of the robot position. It was presented through two chapters with many examples. All these examples were simulated in Matlab in this thesis in order to give the readers and future students a clear and complete introduction to Kalman Filter. Fortunately, I applied this algorithm on a robot that I have built its base from scratch. MCECS-Bot was a project started in Winter 2012 and it was assigned to me from my adviser, Dr. Marek Perkowski. This robot consists of the base with four Mecanum wheels, the waist based on four linear actuators, an arm, neck and head. The base is equipped with many sensors, which are bumper switches, encoders, sonars, LRF and Kinect. Additional devices can provide extra information as backup sensors, which are a tablet and a camera. The ultimate goal of this thesis is to have the MCECS-Bot as an open source system accessed by many future classes, capstone projects and graduate thesis students for education purposes. iA well-known MRPT software system was used to present the results of the Extended Kalman Filter (EKF). These results are simply the robot positions estimated by EKF. They are demonstrated on the base floor of the FAB building of PSU. In parallel, simulated results to all different solutions derived in this thesis are presented using Matlab. A future students will have a ready platform and a good start to continue developing this system.}
+      \field{title}{Mobile Robot Localization Based on Kalman Filter}
+      \field{type}{mathesis}
+      \field{year}{2013}
+      \verb{file}
+      \verb :MobileRobotLocalizationBasedonKalmanFilter.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Julier1997}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=419c393a8ee91d827d0708eda29e80bf}{%
+           family={Julier},
+           family_i={J\bibinitperiod},
+           given={Simon\bibnamedelima J},
+           given_i={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dead64868cbddec8b0209d05725df967}{%
+           family={Uhlmann},
+           family_i={U\bibinitperiod},
+           given={Jeffrey\bibnamedelima K},
+           given_i={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{organization}{2}{%
+        {International Society for Optics}%
+        {Photonics}%
+      }
+      \strng{namehash}{00ef434b78f261339e87c6baa39ae3ab}
+      \strng{fullhash}{00ef434b78f261339e87c6baa39ae3ab}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AeroSense'97}
+      \field{title}{New extension of the Kalman filter to nonlinear systems}
+      \field{year}{1997}
+      \field{pages}{182\bibrangedash 193}
+      \range{pages}{12}
+      \verb{file}
+      \verb :Julier1997 - New extension of the Kalman filter to nonlinear systems.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Cardenas2008}{article}{}
+      \name{author}{3}{}{%
+        {{hash=79b9421cf96dd5eb8ca641bc583a3d02}{%
+           family={Cardenas},
+           family_i={C\bibinitperiod},
+           given={Alvaro\bibnamedelima A},
+           given_i={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=cf7ace800685971bacc42f2e7d5a3bcf}{%
+           family={Amin},
+           family_i={A\bibinitperiod},
+           given={Saurabh},
+           given_i={S\bibinitperiod}}}%
+        {{hash=5c157a074e2c2a026714694e735d6b6a}{%
+           family={Sastry},
+           family_i={S\bibinitperiod},
+           given={Shankar},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5a515a8b874eac11c90338af8787bac8}
+      \strng{fullhash}{5a515a8b874eac11c90338af8787bac8}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{System}
+      \field{number}{a2}
+      \field{title}{Secure control: Towards survivable cyber-physical systems}
+      \field{volume}{1}
+      \field{year}{2008}
+      \field{pages}{a3}
+      \range{pages}{-1}
+      \verb{file}
+      \verb :Cardenas2008 - Secure control_ Towards survivable cyber-physical systems.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Mo2010}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=0a471f746aecf694fd64897713bc03fd}{%
+           family={Mo},
+           family_i={M\bibinitperiod},
+           given={Yilin},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=8f9ba8ee280a4cf1a12ba2c5d2fb5b65}{%
+           family={Garone},
+           family_i={G\bibinitperiod},
+           given={Emanuele},
+           given_i={E\bibinitperiod}}}%
+        {{hash=6996036c86a291b567e28afef23f0214}{%
+           family={Casavola},
+           family_i={C\bibinitperiod},
+           given={Alessandro},
+           given_i={A\bibinitperiod}}}%
+        {{hash=71bb21ce067a0f96b9fa070963519148}{%
+           family={Sinopoli},
+           family_i={S\bibinitperiod},
+           given={Bruno},
+           given_i={B\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{74cb43d799d6ef65ae777d279473c689}
+      \strng{fullhash}{b5fe16b6d4803a370d7f40c2e603d851}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{49th IEEE Conference on Decision and Control (CDC)}
+      \field{title}{False data injection attacks against state estimation in wireless sensor networks}
+      \field{year}{2010}
+      \field{pages}{5967\bibrangedash 5972}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/cdc.2010.5718158
+      \endverb
+      \verb{file}
+      \verb :Mo2010 - False data injection attacks against state estimation in wireless sensor networks.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Yang2013}{article}{}
+      \name{author}{3}{}{%
+        {{hash=45b4a3fc018c2124efb7cfa4967d83d4}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={Qingyu},
+           given_i={Q\bibinitperiod}}}%
+        {{hash=d36c1e59590e98d12889d979f9c9b43d}{%
+           family={Chang},
+           family_i={C\bibinitperiod},
+           given={Liguo},
+           given_i={L\bibinitperiod}}}%
+        {{hash=306f61b972c01e5452d64353ce1974d6}{%
+           family={Yu},
+           family_i={Y\bibinitperiod},
+           given={Wei},
+           given_i={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley-Blackwell}%
+      }
+      \strng{namehash}{078b8ced3cc548b5e87b9fc36a298a66}
+      \strng{fullhash}{078b8ced3cc548b5e87b9fc36a298a66}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Security and Communication Networks}
+      \field{month}{08}
+      \field{number}{9}
+      \field{title}{On false data injection attacks against {Kalman} filtering in power system dynamic state estimation}
+      \field{volume}{9}
+      \field{year}{2013}
+      \field{pages}{833\bibrangedash 849}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1002/sec.835
+      \endverb
+      \verb{file}
+      \verb :Yang_Qingyu.pdf:PDF
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1002/sec.835
+      \endverb
+    \endentry
+    \entry{Bezzo_2014}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=e365524692b1154d7e300488d025329c}{%
+           family={Bezzo},
+           family_i={B\bibinitperiod},
+           given={Nicola},
+           given_i={N\bibinitperiod}}}%
+        {{hash=e5a0fc353b715c6503801fdee065d9e7}{%
+           family={Weimer},
+           family_i={W\bibinitperiod},
+           given={James},
+           given_i={J\bibinitperiod}}}%
+        {{hash=b78328d656c28b62a5301cdb95857042}{%
+           family={Pajic},
+           family_i={P\bibinitperiod},
+           given={Miroslav},
+           given_i={M\bibinitperiod}}}%
+        {{hash=44736c23ce864c3537e0590a75390a37}{%
+           family={Sokolsky},
+           family_i={S\bibinitperiod},
+           given={Oleg},
+           given_i={O\bibinitperiod}}}%
+        {{hash=426b744acc9454c626abd6b855b88691}{%
+           family={Pappas},
+           family_i={P\bibinitperiod},
+           given={George\bibnamedelima J.},
+           given_i={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=7cd4c2ad8cb6b9ea774c007fcdd07a1c}{%
+           family={Lee},
+           family_i={L\bibinitperiod},
+           given={Insup},
+           given_i={I\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
+      }
+      \strng{namehash}{60b29bf04ae619924950c240cbbc3853}
+      \strng{fullhash}{3af6955c87eadd953c8589e112bf84a9}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we present a methodology to control technique. Specifically our framework is inspired by the ground robots under malicious attack on sensors. Within the Linear Quadratic Estimator in which together with the update term attack we intend any malicious disturbance injection on sensors, actuators, and controller that would compromise the and predict steps we add a shield procedure to cancel the safety of a robot. In order to guarantee resilience against effects due to possible attacks on sensors. Our technique attacks, we use a control-level technique implemented within a adds an extra weighted variance to the measurement error recursive algorithm that takes advantage of redundancy in the whenever there is a mismatch between the updated state and information received by the controller. We use the case study the measurement from each of the sensors. By using this of a vehicle cruise-control, however, the strategy we present in this work is general for several applications. Our methodology technique all sensors are always considered, however the one relays on redundancy in the sensor measurements: specifically that contains a corrupted measurement will have a large error we consider N velocity measurements and use a recursive variance and thus will count less when estimating the desired filtering technique that estimates the state of the system while state. being resilient against sensor attacks by acting on the variance of the measurements noise. Finally, we move our focus on hardware validation demonstrating our algorithm through extensive outdoor experiments conducted on two unmanned ground robots.}
+      \field{booktitle}{2014 {IEEE}/{RSJ} International Conference on Intelligent Robots and Systems}
+      \field{month}{09}
+      \field{title}{Attack resilient state estimation for autonomous robotic systems}
+      \field{year}{2014}
+      \field{pages}{3692\bibrangedash 3698}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/iros.2014.6943080
+      \endverb
+      \verb{file}
+      \verb :14.pdf:PDF
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/iros.2014.6943080
+      \endverb
+    \endentry
+    \entry{Mo2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0a471f746aecf694fd64897713bc03fd}{%
+           family={Mo},
+           family_i={M\bibinitperiod},
+           given={Yilin},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=d6f77ca7c77ecf080441f17a0c09943c}{%
+           family={Hespanha},
+           family_i={H\bibinitperiod},
+           given={Joao\bibnamedelima P.},
+           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=71bb21ce067a0f96b9fa070963519148}{%
+           family={Sinopoli},
+           family_i={S\bibinitperiod},
+           given={Bruno},
+           given_i={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
+      }
+      \strng{namehash}{b808867fbc32072c512c386d1d9ef8e3}
+      \strng{fullhash}{b808867fbc32072c512c386d1d9ef8e3}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{IEEE} Transactions on Signal Processing}
+      \field{month}{01}
+      \field{number}{1}
+      \field{title}{Resilient Detection in the Presence of Integrity Attacks}
+      \field{volume}{62}
+      \field{year}{2014}
+      \field{pages}{31\bibrangedash 43}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/tsp.2013.2284145
+      \endverb
+      \verb{file}
+      \verb :06616669.pdf:PDF
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/TSP.2013.2284145
+      \endverb
+    \endentry
+    \entry{wood2002denial}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9ff237f0bc46eed970e41ef27ca08745}{%
+           family={Wood},
+           family_i={W\bibinitperiod},
+           given={Anthony\bibnamedelima D},
+           given_i={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=0becbd40e2011cf6995c75063d2c0d61}{%
+           family={Stankovic},
+           family_i={S\bibinitperiod},
+           given={John\bibnamedelima A},
+           given_i={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{cbac34dbe086170286056e6606163847}
+      \strng{fullhash}{cbac34dbe086170286056e6606163847}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{computer}
+      \field{number}{10}
+      \field{title}{Denial of service in sensor networks}
+      \field{volume}{35}
+      \field{year}{2002}
+      \field{pages}{54\bibrangedash 62}
+      \range{pages}{9}
+    \endentry
+    \entry{bellardo2003802}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=2e2e1d295e0de5c0dab3b4526d5c9026}{%
+           family={Bellardo},
+           family_i={B\bibinitperiod},
+           given={John},
+           given_i={J\bibinitperiod}}}%
+        {{hash=dee88ab507f218ded58a2f13c4801dfc}{%
+           family={Savage},
+           family_i={S\bibinitperiod},
+           given={Stefan},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{abe3e478d033c97216de694c8ed73a8d}
+      \strng{fullhash}{abe3e478d033c97216de694c8ed73a8d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{USENIX security}
+      \field{title}{802.11 Denial-of-Service Attacks: Real Vulnerabilities and Practical Solutions.}
+      \field{year}{2003}
+      \field{pages}{15\bibrangedash 28}
+      \range{pages}{14}
+    \endentry
+    \entry{vegh2014securing}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=a3628d1510dda943cdeda2854c860f60}{%
+           family={Vegh},
+           family_i={V\bibinitperiod},
+           given={Laura},
+           given_i={L\bibinitperiod}}}%
+        {{hash=51a88de5fb38931d4300f11f97ad5fdc}{%
+           family={Miclea},
+           family_i={M\bibinitperiod},
+           given={Liviu},
+           given_i={L\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{19e5b6d340ea0339056592f550d0606b}
+      \strng{fullhash}{19e5b6d340ea0339056592f550d0606b}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Communications (COMM), 2014 10th International Conference on}
+      \field{title}{Securing communication in cyber-physical systems using steganography and cryptography}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+    \endentry
+    \entry{chang2016provably}{article}{}
+      \name{author}{2}{}{%
+        {{hash=079e9e521644438fdfad94300c9fc2eb}{%
+           family={Chang},
+           family_i={C\bibinitperiod},
+           given={Chin-Chen},
+           given_i={C\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=82675908ffcbfd65e11a23306ff11f76}{%
+           family={Le},
+           family_i={L\bibinitperiod},
+           given={Hai-Duong},
+           given_i={H\bibinithyphendelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{9211a3bfb8affb50210ebb8fd53376ce}
+      \strng{fullhash}{9211a3bfb8affb50210ebb8fd53376ce}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Wireless Communications}
+      \field{number}{1}
+      \field{title}{A provably secure, efficient, and flexible authentication scheme for ad hoc wireless sensor networks}
+      \field{volume}{15}
+      \field{year}{2016}
+      \field{pages}{357\bibrangedash 366}
+      \range{pages}{10}
+    \endentry
+    \entry{lyu2016pba}{article}{}
+      \name{author}{4}{}{%
+        {{hash=81bd4dd4f45ac99065894be489a91f48}{%
+           family={Lyu},
+           family_i={L\bibinitperiod},
+           given={Chen},
+           given_i={C\bibinitperiod}}}%
+        {{hash=c4f7eb3a78e33fb582c82f6d2dd9e8c2}{%
+           family={Gu},
+           family_i={G\bibinitperiod},
+           given={Dawu},
+           given_i={D\bibinitperiod}}}%
+        {{hash=90fd91789633e03362f4cf42dbdc3e93}{%
+           family={Zeng},
+           family_i={Z\bibinitperiod},
+           given={Yunze},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=1ae3717ddd3f402c25137b35fa21a742}{%
+           family={Mohapatra},
+           family_i={M\bibinitperiod},
+           given={Prasant},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{8bc06749f13116737895bdd10e7546d5}
+      \strng{fullhash}{7bbb3312189c3bbe45de5f3a5e91c5e0}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Dependable and Secure Computing}
+      \field{number}{1}
+      \field{title}{PBA: Prediction-Based Authentication for Vehicle-to-Vehicle Communications}
+      \field{volume}{13}
+      \field{year}{2016}
+      \field{pages}{71\bibrangedash 83}
+      \range{pages}{13}
+    \endentry
+    \entry{Parker2000}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=02b5e206ff05d85d09f7e41c7e36ad52}{%
+           family={Parker},
+           family_i={P\bibinitperiod},
+           given={Lynne\bibnamedelima E},
+           given_i={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{02b5e206ff05d85d09f7e41c7e36ad52}
+      \strng{fullhash}{02b5e206ff05d85d09f7e41c7e36ad52}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Distributed Autonomous Robotic Systems 4}
+      \field{title}{Current state of the art in distributed autonomous mobile robotics}
+      \field{year}{2000}
+      \field{pages}{3\bibrangedash 12}
+      \range{pages}{10}
+      \verb{file}
+      \verb :Parker2000 - Current state of the art in distributed autonomous mobile robotics.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Kurazume1994}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=e5b4546fc8efd476e65aa23661a6d847}{%
+           family={Kurazume},
+           family_i={K\bibinitperiod},
+           given={Ryo},
+           given_i={R\bibinitperiod}}}%
+        {{hash=6a38b095563392b3aec3eabae33bf883}{%
+           family={Nagata},
+           family_i={N\bibinitperiod},
+           given={Shigemi},
+           given_i={S\bibinitperiod}}}%
+        {{hash=d2900547b6d95bb73701ee59c3d05c80}{%
+           family={Hirose},
+           family_i={H\bibinitperiod},
+           given={Shigeo},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{1141bc6fb4709195458ff9d3889b33fa}
+      \strng{fullhash}{1141bc6fb4709195458ff9d3889b33fa}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Robotics and Automation, 1994. Proceedings., 1994 IEEE International Conference on}
+      \field{title}{Cooperative positioning with multiple robots}
+      \field{year}{1994}
+      \field{pages}{1250\bibrangedash 1257}
+      \range{pages}{8}
+      \verb{file}
+      \verb :Kurazume1994 - Cooperative positioning with multiple robots.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Kurazume1996}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=e5b4546fc8efd476e65aa23661a6d847}{%
+           family={Kurazume},
+           family_i={K\bibinitperiod},
+           given={Ryo},
+           given_i={R\bibinitperiod}}}%
+        {{hash=d2900547b6d95bb73701ee59c3d05c80}{%
+           family={Hirose},
+           family_i={H\bibinitperiod},
+           given={Shigeo},
+           given_i={S\bibinitperiod}}}%
+        {{hash=6a38b095563392b3aec3eabae33bf883}{%
+           family={Nagata},
+           family_i={N\bibinitperiod},
+           given={Shigemi},
+           given_i={S\bibinitperiod}}}%
+        {{hash=758eae106f2ffc4a40fe84786ff3db9d}{%
+           family={Sashida},
+           family_i={S\bibinitperiod},
+           given={Naoki},
+           given_i={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{50e2c7f5ab4bbf5d48824e2ca3ff0358}
+      \strng{fullhash}{7ea7d7a00d26f9fdb75ec13238014b87}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Robotics and Automation, 1996. Proceedings., 1996 IEEE International Conference on}
+      \field{title}{Study on cooperative positioning system (basic principle and measurement experiment)}
+      \field{volume}{2}
+      \field{year}{1996}
+      \field{pages}{1421\bibrangedash 1426}
+      \range{pages}{6}
+      \verb{file}
+      \verb :Kurazume1996 - Study on cooperative positioning system (basic principle and measurement experiment).pdf:PDF
+      \endverb
+    \endentry
+    \entry{Kurazume1998}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=e5b4546fc8efd476e65aa23661a6d847}{%
+           family={Kurazume},
+           family_i={K\bibinitperiod},
+           given={Ryo},
+           given_i={R\bibinitperiod}}}%
+        {{hash=d2900547b6d95bb73701ee59c3d05c80}{%
+           family={Hirose},
+           family_i={H\bibinitperiod},
+           given={Shigeo},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{411c15b624b68aca34ba412cb4005d85}
+      \strng{fullhash}{411c15b624b68aca34ba412cb4005d85}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Robotics and Automation, 1998. Proceedings. 1998 IEEE International Conference on}
+      \field{title}{Study on cooperative positioning system: optimum moving strategies for CPS-III}
+      \field{volume}{4}
+      \field{year}{1998}
+      \field{pages}{2896\bibrangedash 2903}
+      \range{pages}{8}
+      \verb{file}
+      \verb :Kurazume1998 - Study on cooperative positioning system_ optimum moving strategies for CPS-III.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Kurazume2000}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e5b4546fc8efd476e65aa23661a6d847}{%
+           family={Kurazume},
+           family_i={K\bibinitperiod},
+           given={Ryo},
+           given_i={R\bibinitperiod}}}%
+        {{hash=d2900547b6d95bb73701ee59c3d05c80}{%
+           family={Hirose},
+           family_i={H\bibinitperiod},
+           given={Shigeo},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{411c15b624b68aca34ba412cb4005d85}
+      \strng{fullhash}{411c15b624b68aca34ba412cb4005d85}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Autonomous Robots}
+      \field{number}{1}
+      \field{title}{An experimental study of a cooperative positioning system}
+      \field{volume}{8}
+      \field{year}{2000}
+      \field{pages}{43\bibrangedash 52}
+      \range{pages}{10}
+      \verb{file}
+      \verb :Kurazume2000 - An experimental study of a cooperative positioning system.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Sanderson1997}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b52de020c9c95e4b4ce8077f1ee64e4f}{%
+           family={Sanderson},
+           family_i={S\bibinitperiod},
+           given={Arthur\bibnamedelima C},
+           given_i={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{b52de020c9c95e4b4ce8077f1ee64e4f}
+      \strng{fullhash}{b52de020c9c95e4b4ce8077f1ee64e4f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advanced Robotics}
+      \field{number}{4}
+      \field{title}{A distributed algorithm for cooperative navigation among multiple mobile robots}
+      \field{volume}{12}
+      \field{year}{1997}
+      \field{pages}{335\bibrangedash 349}
+      \range{pages}{15}
+      \verb{file}
+      \verb :Sanderson1997 - A distributed algorithm for cooperative navigation among multiple mobile robots.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Roumeliotis2002}{article}{}
+      \name{author}{2}{}{%
+        {{hash=708eb66fc48a1961cfe1e27cca309493}{%
+           family={Roumeliotis},
+           family_i={R\bibinitperiod},
+           given={S.I.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=25df3b0f2ce7bdbbf67d1ca7a673a018}{%
+           family={Bekey},
+           family_i={B\bibinitperiod},
+           given={G.A.},
+           given_i={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
+      }
+      \strng{namehash}{1b75e80437de12f65a75a2262306a13e}
+      \strng{fullhash}{1b75e80437de12f65a75a2262306a13e}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{IEEE} Trans. Robot. Automat.}
+      \field{month}{10}
+      \field{number}{5}
+      \field{title}{Distributed multirobot localization}
+      \field{volume}{18}
+      \field{year}{2002}
+      \field{pages}{781\bibrangedash 795}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1109/tra.2002.803461
+      \endverb
+      \verb{file}
+      \verb :01067998.pdf:PDF
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/TRA.2002.803461
+      \endverb
+    \endentry
+    \entry{Olfati-Saber2005}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=448d222034fe66c6f6bbd95ef0b5f40d}{%
+           family={Olfati-Saber},
+           family_i={O\bibinithyphendelim S\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{448d222034fe66c6f6bbd95ef0b5f40d}
+      \strng{fullhash}{448d222034fe66c6f6bbd95ef0b5f40d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. 44th IEEE Conf. Decision and Control}
+      \field{issn}{0191-2216}
+      \field{month}{12}
+      \field{title}{Distributed {Kalman} Filter with Embedded Consensus Filters}
+      \field{year}{2005}
+      \field{pages}{8179\bibrangedash 8184}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/CDC.2005.1583486
+      \endverb
+      \verb{file}
+      \verb :10.1.1.124.757.pdf:PDF
+      \endverb
+      \keyw{consensus filters,distributed Kalman filter,dynamic average-consensus,networked embedded systems,random networks,sensor fusion,sensor networks,Band pass filters,Computational modeling,Computer architecture,Distributed algorithms,Filtering algorithms,Kalman filters,Sensor fusion,Stability,State estimation,Weight measurement,consensus filters,distributed Kalman filter,dynamic average-consensus,networked embedded systems,random networks,sensor fusion,sensor networks}
+    \endentry
+    \entry{tallavajhulalist}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3feb489015c55efb33e34ada01381e15}{%
+           family={Tallavajhula},
+           family_i={T\bibinitperiod},
+           given={Abhijeet},
+           given_i={A\bibinitperiod}}}%
+        {{hash=f21fbb2d47098970182066e05150b23a}{%
+           family={Choudhury},
+           family_i={C\bibinitperiod},
+           given={Sanjiban},
+           given_i={S\bibinitperiod}}}%
+        {{hash=ad26bf16eeaee427e8e36bea35587822}{%
+           family={Scherer},
+           family_i={S\bibinitperiod},
+           given={Sebastian},
+           given_i={S\bibinitperiod}}}%
+        {{hash=d2904722ee9ec7753a1f84842ea03ebc}{%
+           family={Kelly},
+           family_i={K\bibinitperiod},
+           given={Alonzo},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c91eb85fe5d4f5f5a7fa392bd72418fc}
+      \strng{fullhash}{04d4e7e841fd430efd4adfd41fd13066}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{List Prediction Applied To Motion Planning}
+    \endentry
+    \entry{bridge2008robust}{article}{}
+      \name{author}{5}{}{%
+        {{hash=767b551c22cec82dea9ea938d7a483fb}{%
+           family={Bridge},
+           family_i={B\bibinitperiod},
+           given={Brian},
+           given_i={B\bibinitperiod}}}%
+        {{hash=e3de3c7e132c2d1fe0b2e3c873bff0e9}{%
+           family={Ahn},
+           family_i={A\bibinitperiod},
+           given={Sunghwan},
+           given_i={S\bibinitperiod}}}%
+        {{hash=0253eed4832271c97bce205fcf8952ea}{%
+           family={Lett\bibnamedelima Doh},
+           family_i={L\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Nakju},
+           given_i={N\bibinitperiod}}}%
+        {{hash=7be49fe6e3b29a959eb423b3cf1e983b}{%
+           family={Kyun\bibnamedelima Chung},
+           family_i={K\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Wan},
+           given_i={W\bibinitperiod}}}%
+        {{hash=073539a0b11a740a80ce3c985654933d}{%
+           family={Yep\bibnamedelima Nam},
+           family_i={Y\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Sang},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Emerald Group Publishing Limited}%
+      }
+      \strng{namehash}{866b9758dee4363f33e1e5ba1fbeef0f}
+      \strng{fullhash}{4d13fd0456df3e0c2c9448177a03a85c}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Industrial Robot: An International Journal}
+      \field{number}{3}
+      \field{title}{The robust construction of a generalized Voronoi graph (GVG) using partial range data for guide robots}
+      \field{volume}{35}
+      \field{year}{2008}
+      \field{pages}{259\bibrangedash 265}
+      \range{pages}{7}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
