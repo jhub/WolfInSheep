@@ -4,16 +4,13 @@
 \usepackage[backend=biber, style=ieee]{biblatex}
 \addbibresource{jprefwolf.bib}
 \addbibresource{mwrefwolf.bib}
-\usepackage{amsmath}
-\usepackage[final]{microtype}
-\usepackage{caption}
-\usepackage{glossaries}
+\usepackage{amsmath} % For better math in tables and equations
+\usepackage[final]{microtype} % Makes things look better in the end
+\usepackage{glossaries} % Just here so I don't need to remove \gls{} from text when moving from my thesis
 \input{glossary.tex}
-%\usepackage{hyperref}
 
 % correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor}
-
+%\hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
 %
@@ -227,22 +224,16 @@ Pickle\_msg out is the received messages from the outside world that are rebroad
 The results were, as expected, the node could not publish another type of message on our specified topic. Then, after making the appropriate PickleSend Type we are able to send the message to the subscriber callback in the robot proxy. From there we learn our transmission was successfully encrypted and transmitted through, received decrypted and unicasted to the receiving host. The process is carried on to the test bench of two zed boards where the implementation of response computation must be extendable to both the laptop and board despite architecture. We are able to verify the authentication and individual agent assignment by verifying the test data itself at each end of the connection.
 
 \subsection{State Detection}
-
 [INSERT RESULTS HERE]
 
 \section{Conclusion}
-
 We have presented three components from a larger chain of trust that is designed to ensure security of not only the agent itself, but also of the group of agents surrounding it.
 
 % conference papers do not normally have an appendix
 
 % use section* for acknowledgment
 \section*{Acknowledgment}
-
 We would like to thank Professors Murat C. Cavusoglu, Russell C. Jackson and Tipakorn Greigarn and for their time, support and guidance.
 
 \printbibliography
-
 \end{document}
-
-
