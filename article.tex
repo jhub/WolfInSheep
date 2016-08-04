@@ -149,7 +149,7 @@ New agent authentication work in a similar manner to normal communication but mu
 
 We start our state detection by defining our state and control:
 
-\begin{table}[h]
+\begin{table}[]
 \label{table_example}
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -168,7 +168,7 @@ Position and velocity are included in the state in order to make future conjectu
 	
 We obtain the average of the particles  which is utilized in order to obtain an approximate point nearest to some neighbors on two maps: a compromised map and an uncompromised map. Both maps are comprised of state points along the path planned that are considered compromised or uncompromised as illustrated in figure~\ref{fig:compmaps}.
 	
-\begin{figure}[h]
+\begin{figure}[]
 \centering
 \includegraphics[width=0.4\textwidth]{Path_comp_uncomp}
 \caption{The left shows the uncompromised map made up of states avoiding some area and the right shows a compromised map where the states do cross the same area. In this case the state obtained from the particle filter mean, demonstrated in blue, would likely yield a more compromised probability}
@@ -239,7 +239,7 @@ Use of the data link layer pushed the use of raw sockets; the socket class for p
 
 The python code was first loaded onto two different laptops, both running Ubuntu 14.04 LTS with a full ROS install, and connectivity was established. We first start with obtaining the database from the 'central base' module created as seen in figure~\ref{fig:TopicIntr1}. The directory where the database file resided was located and moved to the correct agent where the robot\_proxy was executed.
 
-\begin{figure}[h]
+\begin{figure}[]
 \centering
 \includegraphics[width=0.4\textwidth]{TopicIntr1}
 \caption{The initial communication with the central frame is made here. Each database, in its encrypted form, is created to be placed with each corresponding agent.}
@@ -248,7 +248,7 @@ The python code was first loaded onto two different laptops, both running Ubuntu
 
 A new connection is detected and notified via a list in topic /Host\_lists which signifies a working connection. Now, in order to test the appropriate data the testing node Simple\_calc.py was used as seen in Figure~\ref{fig:TopicIntr2}.
 
-\begin{figure}[h]
+\begin{figure}[]
 \centering
 \includegraphics[width=0.4\textwidth]{TopicIntr2}
 \caption{Topic Interaction with node- As new agents are populated, the external host lists are updated. Hence, when the topic handler retrieves the Host Lists from all the connection objects, the nodes in the current system will have an accurate overview of which topics are being published elsewhere based on the MAC of each external agent.}
