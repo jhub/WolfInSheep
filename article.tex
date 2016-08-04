@@ -51,7 +51,7 @@ Email: \IEEEauthorrefmark{1}jpc87@case.edu,
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-Mobile robot security is a rapidly developing area of interest in robotics.As mobile robotic systems become more present, the need for secure and reliable state estimation systems continues to grow. The increasing coverage of wireless networks and density of network cyber-physical systems has lead to an opportunity for distributed systems coordinated between multiple agents. This paper proposes a distributed state estimation system using Kalman filters with secure ad-hoc channel communications between the agents. This system is implemented on the TurtleBot platform using the Robot Operating System, and performance is also evaluated in the Gazebo simulator.
+Mobile robot security is a rapidly developing area of interest in robotics.As mobile robotic systems become more present, the need for secure and reliable state estimation systems continues to grow. The increasing coverage of wireless networks and density of network cyber-physical systems has lead to an opportunity for distributed systems coordinated between multiple agents. This paper proposes a distributed state estimation system using Kalman filters with secure ad-hoc channel communications between the agents. On top of this a state detection system is added that allows agents to detect subversive or malfunctioning agents in their environment. This system is implemented on the TurtleBot platform using the Robot Operating System, and performance is also evaluated in the Gazebo simulator.
 \end{abstract}
 
 % no keywords
@@ -265,6 +265,7 @@ The results were, as expected, the node could not publish another type of messag
 \section{Conclusion}
 We have presented three components from a larger chain of trust that is designed to ensure security of not only the agent itself, but also of the group of agents surrounding it.
 
+We have presented a simple distributed state estimation scheme operating over secure network channels that improves the performance of each agent and is augmented with a state detection scheme allowing agents to recognize possible subversive agents in their environment.
 % conference papers do not normally have an appendix
 
 % use section* for acknowledgment
