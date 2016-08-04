@@ -9,7 +9,7 @@
 		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{E}\relax \glsresetentrylist %
 \glossentry{ekf}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{1}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{K}\relax \glsresetentrylist %
 \glossentry{kf}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{1\delimR 3}}}\glsgroupskip
@@ -18,5 +18,5 @@
 		\glsseeformat[\seename ]{con_filter}{Z}}}\glsgroupskip
 \glsgroupheading{U}\relax \glsresetentrylist %
 \glossentry{ukf}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{1}}}%
+		\setentrycounter[]{page}\glsnumberformat{2}}}%
 \end{theglossary}\glossarypostamble

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.3)  4 AUG 2016 02:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.3)  4 AUG 2016 19:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -787,41 +787,33 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 \openout4 = `article.ist'.
 
 
-] [2]
-<images/Path_comp_uncomp.jpg, id=15, 651.18282pt x 316.93407pt>
+] [2] [3]
+<images/Path_comp_uncomp.jpg, id=20, 651.18282pt x 316.93407pt>
 File: images/Path_comp_uncomp.jpg Graphic file (type jpg)
 
 <use images/Path_comp_uncomp.jpg>
-Package pdftex.def Info: images/Path_comp_uncomp.jpg used on input line 178.
+Package pdftex.def Info: images/Path_comp_uncomp.jpg used on input line 179.
 (pdftex.def)             Requested size: 206.39685pt x 100.45377pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3] <images/TopicIntr1.png, id=21, 470.412pt x 63.4005pt>
+<images/TopicIntr1.png, id=21, 470.412pt x 63.4005pt>
 File: images/TopicIntr1.png Graphic file (type png)
 
 <use images/TopicIntr1.png>
-Package pdftex.def Info: images/TopicIntr1.png used on input line 211.
+Package pdftex.def Info: images/TopicIntr1.png used on input line 212.
 (pdftex.def)             Requested size: 206.39685pt x 27.81697pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 <images/TopicIntr2.png, id=22, 214.5105pt x 60.444pt>
 File: images/TopicIntr2.png Graphic file (type png)
 
 <use images/TopicIntr2.png>
-Package pdftex.def Info: images/TopicIntr2.png used on input line 220.
+Package pdftex.def Info: images/TopicIntr2.png used on input line 221.
 (pdftex.def)             Requested size: 206.39685pt x 58.16023pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [4 <./images/Path_comp_uncomp.jpg> <./images/TopicIntr1.png> <./images/TopicIn
+tr2.png>]
 ! Undefined control sequence.
 <argument> ...motely Kill a Jeep on the Highway\x 
                                                   {fffd}\x {fffd}\x {fffd}Wi...
-l.245 
+l.246 
       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -832,7 +824,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...ll a Jeep on the Highway\x {fffd}\x 
                                                   {fffd}\x {fffd}With Me in It
-l.245 
+l.246 
       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -843,7 +835,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ... on the Highway\x {fffd}\x {fffd}\x 
                                                   {fffd}With Me in It
-l.245 
+l.246 
       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -851,8 +843,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[4 <./images/Path_comp_uncomp.jpg> <./images/TopicIntr1.png> <./images/TopicInt
-r2.png>] [5]
+[5]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -876,11 +867,11 @@ Package logreq Info: Writing requests to 'article.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 14907 strings out of 493304
- 247559 string characters out of 6139872
- 722067 words of memory out of 5000000
- 17932 multiletter control sequences out of 15000+600000
- 47594 words of font info for 218 fonts, out of 8000000 for 9000
+ 14916 strings out of 493304
+ 247648 string characters out of 6139872
+ 720067 words of memory out of 5000000
+ 17934 multiletter control sequences out of 15000+600000
+ 50508 words of font info for 225 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  46i,13n,75p,2644b,1033s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -894,10 +885,10 @@ msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on ./latex/article.pdf (6 pages, 233854 bytes).
+Output written on ./latex/article.pdf (6 pages, 239818 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23056 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23568 words of extra memory for PDF output out of 24883 (max. 10000000)
 

@@ -23,7 +23,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{The Wolf in Sheep's Clothing\\
+\title{The Wolf in Sheep's Clothing:\\
 Subversive Adversarial Agent Identification}
 
 
@@ -55,12 +55,12 @@ Email: \IEEEauthorrefmark{1}jpc87@case.edu,
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-The abstract goes here.
+
+Agents in a network often use each other's information in conjunction with other environmental factors to make decisions. In order for these decisions to be appropriate for the system each agent must know that not only is there a secure communication, but also that behaviors follow an usage envelope, one which obtains contains the statistical model of appropriate movements. Integrity, availability, and confidentiality are evaluated as they pertain to the methods used in order to gather the position of other agents in order to compare the movements to the usage envelope. A secure communication channel that is backwards compatible in the field is introduced in conjunction with state detection and distributed state estimation in order to provide the probability other agents in the network are compromised.
+
 \end{abstract}
 
 % no keywords
-
-
 
 
 % For peer review papers, you can put extra information on the cover
@@ -74,15 +74,19 @@ The abstract goes here.
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
-With drones in land, air and sea coming into the growing consumer and private markets,l a closer look at the security involved in groups of these machines must be made. Robot security has landed headlines across a variety of commonly used devices, car hacking having a prominent impact in the United States and abroad. In the past few years individuals have been able to remotely connect to, disable, and control various vehicles in the market through techniques like that of Greenber et al \cite{greenberg2015hackers}. As more agents become connected, in this case vehicles in a highway, the decisions that each agent must make are based on the information it obtains from its sensors and other agent's data. This paper discusses how an agent can securely obtain the probability that another agent in the system is compromised.
+With drones in land, air and sea coming into the growing consumer and private markets, the security involved in groups of these machines must be further studied. Robot security has landed headlines across a variety of commonly used devices, car hacking having a prominent impact in the United States and abroad. Some individuals have been able to remotely connect to, disable, and control various vehicles in the market through techniques like that of Greenber et al, posing many questions about the protocol used in vehicles \cite{greenberg2015hackers}. As more agents become connected, much like cyber-vehicles in a highway would, decisions that each agent makes are based on the information it obtains from not only its sensors but also other agent's data. This paper discusses how an agent can securely obtain the probability that another agent in the system is compromised in order to trust feedback obtained from that agent in question.
 
-There are three core goals for the security of any cyber-physical system: integrity, availability, and confidentiality \cite{Cardenas2008}. Those can be thought of as three simple questions: "Can I trust the data?", "Do I have access to the data when I need it?", and "Is the data hidden from those who shouldn't have it?". A system can be tampered through internal and external means. Physical and software components can both be compromised for any given agent internally whereas agents' communications and sensor data are both vulnerable to manipulation externally. We examine the case of external means by first developing a secure channel of communication, then utilizing State estimation and Secure state estimation to obtain a robot's individual assessment of the likelyhood of a robot in questing being compromised. We thus define our threat model further in the first part of the methodology after detailing related works for each of the three components developed. These three components are part of a larger chain of trust that verifies that the internal part of an agent is not compromised by a HSE unit which fingerprints specific physical properties and uniquely identifies an agent.
+There are three core goals for the security of any cyber-physical system: integrity, availability, and confidentiality \cite{Cardenas2008}. Those can be thought of as three simple questions: ``Can I trust the data?'', ``Do I have access to the data when I need it?'', and ``Is the data hidden from those who shouldn't have it?''. These three components are part of a larger chain of trust, one which will be further developed and implemented in future work, that verifies all other components in an agent are not compromised\footnote{In the full trust chain there is an initial block of trust called Hardware Secure Enclosure (HSE) unit which fingerprints specific physical properties of the hardware to uniquely identify an agent. This fingerprint is used to verify the static software, dynamic software, control system and communication of the agent.}.
+
+Communication between two agents focuses on confidentiality and integrity which can both be accounted for through proper encryption and the data fields inside the encrypted message. A challenge-response system is implemented in this paper which changes, or churns, on every round trip time providing fresh keys for the AES-256 encrypted payload. A timestamp and source mac address ensures not only that the message comes from the individual claiming to be the originator in the raw packet, but also that timing attacks can be properly guarded against. Communications is not the only input which needs protection however, an adversary can distort the sensor data of an agent in order to lead it in a stray. Another agent in the group can detect the abnormality by comparing the state and behavior combination taken to that of an established usage envelope, which in the case of this paper is a pre-computed map. Since there is both sensor and mechanical error in the system a Bayes filter is used in order to implement proper weighing of new data coming in. 
+
+We now relate some work related to integrity, availability, and confidentiality, and further discuss the implementation technique used. 
 
 \section{Related Work}
-Chain of trusts, as pertaining to cyber systems, have been introduced in works such as \cite{adi2009mechatronic} where a DNA clone resistant approach is taken throughout; a Physical Unclonable Function (PUF) was introduced which obtains physical differences between other electronic devices. Similar to this work the extended chain of trust this paper is part of a larger work which incorporates a Hardware Secure Enclosure (HSE) which is used to provide a unique hardware signature used to verify other parts of the system much like \cite{adi2009mechatronic}.
+Chain of trusts, as pertaining to cyber systems, have been introduced in works such as \cite{adi2009mechatronic} where a DNA clone resistant approach is taken throughout; a Physical Unclonable Function (PUF) was introduced which obtains physical differences between other electronic devices. Similar to this work the extended chain of trust this paper is part of a larger work which incorporates a HSE which is used to provide a unique hardware signature used to verify other parts of the system much like \cite{adi2009mechatronic}.
 
 \subsection{State Estimation}
-State estimation is a fundamental problem for robotics. Without knowing its location, a robot cannot be very useful. One common technique for robot localization is to use a \gls{kf}. The \gls{kf} is one of the most studied and most heavily utilized Bayesian filter \cite[39-81]{ProbabilisticRobotics}. At its core, a \gls{kf} represents the state of a linear system as a multivariate normal distribution. By representing the state of the system as a normal distribution the filter can compactly represent the degree of belief of any possible state of the system.
+State estimation is a fundamental problem in robotics. Without knowing its location, a robot cannot be very useful. One common technique for robot localization is to use a \gls{kf}. The \gls{kf} is one of the most studied and most heavily utilized Bayesian filter \cite[39-81]{ProbabilisticRobotics}. At its core, a \gls{kf} represents the state of a linear system as a multivariate normal distribution. By representing the state of the system as a normal distribution the filter can compactly represent the degree of belief of any possible state of the system.
 
 The application of the \gls{kf} to the task of robot localization has been studied intently \cite{Localization2003, Mohsin2014}. In \cite{Mohsin2014}, the \gls{kf} is explained to be so popular for three main reasons. First, it is optimal under certain assumptions, second that it is recursive which is memory efficient, and finally that it relies only on having knowledge of noisy sensor data and not being able to measure certain state variables directly.
 
@@ -91,7 +95,7 @@ However, the \gls{kf} is best used for a linear system. Thus, plain \glspl{kf} a
 A \gls{ukf} was chosen to be implemented for this paper, however many of the statements here regarding the filters can be applied to \glspl{ekf} as well. Our chosen software package also makes it trivially easy to switch between a \gls{ukf} and \gls{ukf}. For the remainder of this article, we will use the generic term \glspl{kf}, demonstrating the fact that these statements apply to both \glspl{ukf} and \glspl{ekf}.
 
 \subsection{Secure State Estimation}
-Secure State Estimation requires a focus on all three of these pieces.
+Secure State Estimation requires a focus on integrity, availability, and confidentiality alike.
 
 \subsubsection{Integrity}
 The accuracy of a \gls{kf} when the sensors are functioning property is not in question, so we must look at when the sensors are not functioning properly. This leads to two possible scenarios, sensor failure and false data injection.
@@ -103,7 +107,7 @@ Knowing that sensor failure is not a huge risk for the \gls{kf}, sensor interfer
 \cite{Mo2010} and \cite{Yang2013} both demonstrate that \glspl{kf} are susceptible to false data injection attacks, and that even with failure detectors a clever adversary can craft their attack to bypass these detectors. \cite{Bezzo_2014} and \cite{Mo2014} both attack this problem by adding extra steps into their \gls{kf} algorithm. Both successfully show that the filter output can be shielded from the effects of the attack.
 
 \subsubsection{Availability}
-In a distributed system, \gls{DoS} attacks become a real threat. While there are many ways to execute such attacks and also many ways to defeat them (\cite{wood2002denial}, \cite{bellardo2003802}) such systems are outside the scope of this TurtleBot. Rather than showing that the system can defeat \gls{DoS} attacks, we will show that it can function sufficiently in the event that there is a network interruption and inter-robot communication is prevented.
+In a distributed system, \gls{DoS} attacks become a real threat. While there are many ways to execute such attacks and also many ways to defeat them (\cite{wood2002denial}, \cite{bellardo2003802}) such systems are outside the scope of this TurtleBot. Rather than showing that the system can defeat \gls{DoS} attacks with random packet drops, we will show that it can function sufficiently in the event that there is a network interruption and inter-robot communication is prevented.
 
 \subsubsection{Confidentiality: Secure Ad-Hoc Channel Communication}
 There are various works that cover a communications for adhoc networks. \cite{vegh2014securing} uses an extension of the ElGamal algorithm in order to limit the access of agents in the network. In the event that an agent is compromised the information within the decrypted message remains protected through steganography, a method used for hiding information within a text \cite{adi2009mechatronic}. The implementation uses direct agent to agent communication and thus no hierarchy is used; no encrypted broadcast messages are sent and it seems unnecessary to encrypt the information further as it would lead to potential DOS attacks.
@@ -129,16 +133,13 @@ The previously mentioned works are all examples of a decentralized, rather than 
 \subsection{State Detection}
 
 In order to obtain behavior that is expected and not expected different types of planning have been introduced in literature. Complex environments can be made up of many possible paths which can be computed with strategies such as that of \cite{tallavajhula2016list}, where each iteration of path planning uses a more complex predictor. Each of these predictors' path can be used to build a map of states and corresponding behavior that an agent is able to perform. 
-Other planning algorithms use specialized planning based on a sub process task such as \cite{ahn2008robust}'s vertical control system, where one module is independently responsible to avoiding objects while more abstract modules can plan according to behavior of objects. Such planning can also be implemented into a map of acceptable behaviors for each state. Multiple goal resolution is attractive as it may still be used in the evaluation of an observed behavior discussed in III.B .
+
+Other planning algorithms use specialized planning based on a sub process task such as \cite{ahn2008robust}'s vertical control system, where one module is independently responsible to avoiding objects while more abstract modules can plan according to behavior of objects. Such planning can also be implemented into a map of acceptable behaviors for each state. Multiple goal resolution is attractive as it may still be used in the evaluation of an observed behavior, we will however demonstrate the concept through an avoidance task.
 
 \section{Methodology}
 
 The method in which the three strategies of interest are implemented are now outlined. The reader should make note the intended chain of trust commences with hardware integrity at its core moving through the various levels of authentication for self-verification. 
 Once the agent can verify its own state it then proceeds to estimate the likelihood that other agents are taking an appropriate actions. 
-
-\subsection{Threat Model}
-
-[INSERT THREAT MODEL]
 
 \subsection{Secure Ad-Hoc Channel Communication}
 
