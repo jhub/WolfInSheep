@@ -88,8 +88,6 @@ The application of the KF to the task of robot localization has been studied int
 
 For this paper, we utilize an Unscented Kalman Filter (UKF) for the task of sensor fusion and localization. The UKF provides better accuracy for non-linear systems than a KF or Extended Kalman Filter (EKF) and is less computationally complex \cite{Julier1997}.
 
-REMOVED EXPANDED EKF/UKF DISCUSSION
-
 \subsection{Secure State Estimation}
 Secure State Estimation requires a focus on all three of the previously mentioned facets of security: Integrity, Availability and Confidentiality. We choose to focus on the first and third of these, Integrity and Confidentiality, for our secure estimation system.
 
@@ -203,8 +201,6 @@ $g_g \rightarrow$ KF input
 \end{table}
 
 The following sections how the position estimates $p_l$, $p_g$, $g_l$, and $g_g$ are obtained. All localization estimates will be referenced with an associated coordinate frame. These frames are described in ROS REP-105 \cite{REP_105}. They are the base\_link (aka base\_footprint) frame, which is rigidly fixed to the center of the robot, the odom (aka local) frame, which is continuous but subject to drift over time, and the map (aka global) frame, which is subject to discrete jumps but does not drift over time.
-
-REMOVED LENGTHY COORDINATE FRAME DESCRIPTIONS FROM HERE
  
 \paragraph{Filters}
 There are two filters operating on the robot to create a whole localization estimate. The first is the \textit{Continuous Filter} (CF), and the second is the \textit{Discrete Filter} (DF). They each perform a separate but related localization task, and combined give a full localization estimate with respect to both the local and global frame of the robot. 
