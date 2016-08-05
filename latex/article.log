@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.3)  4 AUG 2016 20:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.3)  4 AUG 2016 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -693,42 +693,42 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 ] [2]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 152.
+               Default added (so using `tbp') on input line 154.
 
+[3]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 171.
+               Default added (so using `tbp') on input line 173.
 
-<images/Path_comp_uncomp.jpg, id=145, 651.18282pt x 316.93407pt>
+<images/Path_comp_uncomp.jpg, id=152, 651.18282pt x 316.93407pt>
 File: images/Path_comp_uncomp.jpg Graphic file (type jpg)
 
 <use images/Path_comp_uncomp.jpg>
-Package pdftex.def Info: images/Path_comp_uncomp.jpg used on input line 173.
+Package pdftex.def Info: images/Path_comp_uncomp.jpg used on input line 175.
 (pdftex.def)             Requested size: 206.39685pt x 100.45377pt.
- [3]
+
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 231.
 
-<images/TopicIntr1.png, id=160, 470.412pt x 63.4005pt>
+<images/TopicIntr1.png, id=157, 470.412pt x 63.4005pt>
 File: images/TopicIntr1.png Graphic file (type png)
 
 <use images/TopicIntr1.png>
 Package pdftex.def Info: images/TopicIntr1.png used on input line 233.
 (pdftex.def)             Requested size: 206.39685pt x 27.81697pt.
-
+ [4 <./images/Path_comp_uncomp.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 240.
 
-<images/TopicIntr2.png, id=162, 214.5105pt x 60.444pt>
+<images/TopicIntr2.png, id=175, 214.5105pt x 60.444pt>
 File: images/TopicIntr2.png Graphic file (type png)
 
 <use images/TopicIntr2.png>
 Package pdftex.def Info: images/TopicIntr2.png used on input line 242.
 (pdftex.def)             Requested size: 206.39685pt x 58.16023pt.
- [4 <./images/Path_comp_uncomp.jpg>] [5 <./images/TopicIntr1.png> <./images/Top
-icIntr2.png>]
+ [5 <./images/TopicIntr1.png> <./images/TopicIntr2.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -753,11 +753,11 @@ Package logreq Info: Writing requests to 'article.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13677 strings out of 493304
- 225886 string characters out of 6139872
+ 13669 strings out of 493304
+ 225804 string characters out of 6139872
  673443 words of memory out of 5000000
- 16691 multiletter control sequences out of 15000+600000
- 54497 words of font info for 245 fonts, out of 8000000 for 9000
+ 16689 multiletter control sequences out of 15000+600000
+ 51715 words of font info for 240 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  48i,13n,49p,2644b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -773,10 +773,10 @@ m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on ./latex/article.pdf (6 pages, 267031 bytes).
+Output written on ./latex/article.pdf (6 pages, 267573 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 28320 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 27808 words of extra memory for PDF output out of 29859 (max. 10000000)
 
