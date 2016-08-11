@@ -187,18 +187,23 @@ We propose a distributed system where robot's share their sensor information wit
 
 To create this system, we implemented a localization system with the robot\_localization \cite{Moore2014, Moore} package for the Robot Operating System (ROS). We used this UKF implementation for a robot in a planar environment, simplifying our state to an x and y position and yaw angle. This is an realistic representation of our test vehicle, the TurtleBot.
  
-\paragraph{Filters}
+\subsubsection{Filters}
 There are two UKFs operating on the robot to create a localization estimate. The first is the \textit{Continuous Filter} (CF), and the second is the \textit{Discrete Filter} (DF). They each perform a separate but related localization task, and combined give a full localization estimate with respect to both the local and global frame of the robot.
 
 The coordinate frames used to describe the position estimate are as described in ROS REP-105~\cite{REP_105}. They are the base\_link (aka base\_footprint) frame, which is rigidly fixed to the center of the robot, the odom (aka local) frame, which is continuous but subject to drift over time, and the map (aka global) frame, which is subject to discrete jumps but does not drift over time.
 
-\subsubsection{Continuous Filter} \label{con_filter_subsubsection}
+\paragraph{Continuous Filter} \label{con_filter_subsubsection}
 The CF calculates the transformation from $odom \rightarrow base\_link$. It receives odometry information from the robot's wheel encoders, specifically the x and y velocity and yaw velocity. Using this information it publishes the $odom \rightarrow base\_link$ transformation.
 
-\subsubsection{Discrete Filter} \label{disc_filter_subsubsection}
-The DF calculates the transformation from $map \rightarrow base\_link$. Because the ROS TF package that handles coordinate frame transformations enforces a tree structure where each node can only have one parents, the DF references the $odom \rightarrow base\_link$ transform published by the CF and publishes a transform from $map \rightarrow odom$. The inputs to the DF are the robot's wheel encoder odometry (x, y, and yaw velocity, same as the CF), a GPS, and external poses calculated by other robots. The GPS and external poses are integrated as x and y coordinates in the map frame.
+\paragraph{Discrete Filter} \label{disc_filter_subsubsection}
+The DF calculates the transformation from $map \rightarrow base\_link$. Because the ROS system that handles coordinate frame transformations enforces a tree structure where each node can only have one parents, the DF references the $odom \rightarrow base\_link$ transform published by the CF and publishes a transform from $map \rightarrow odom$. The inputs to the DF are the robot's wheel encoder odometry (x, y, and yaw velocity, same as the CF), a GPS, and external poses calculated by other robots. The GPS and external poses are integrated as x and y coordinates in the map frame.
 
+\subsubsection{Communication Structure}
+This distributed system was built as a system of ROS nodes. ROS offers multiple communication options to suit different needs. We implemented a system of action servers and clients to efficiently share sensor data. Each robot has an action server that can receive pose information from other robots. The callback of the action server handles preprocessing of the information and then publishes to the input topic for the discrete filter.
 
+Each robot maintains a list of other robots in its environment, and creates an action client to connect to each. This list can be updated dynamically and adding or removing clients as robots enter or leave the environment is simple. Because calls from an action client to an action server are non-blocking, there is almost no runtime penalty to maintaining a large list of action clients.
+
+Intra-robot communications, e.g. between the filters and the external communications nodes, is handled via the publish/subscribe methodology. This is for simplicity and the low overhead required. More advanced features are not required for these communications.
 
 \section{Experiments}
 
