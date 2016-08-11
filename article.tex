@@ -187,34 +187,27 @@ This implementation provides a way a way for the change in behavior, that is fro
 
 
 \subsection{Distributed State Estimation}
-KFs perform better with more inputs. This is the driving force behind increasing the accuracy of mobile robot localization. With more sensor inputs, noise can be removed more accurately. One way to increase the number of sensor inputs to a filter is to add more sensors to the robot. However this will rapidly drive up cost and complexity. Another solution is to have robots share their information about the surrounding world, thus artificially inflating the number of sensors a robot has.
+We propose a distributed system where robot's share their sensor information with other robot's in their environment in order to increase state estimation accuracy. This system allows for robots to enter or leave the system at any time, and does not make any assumptions or requirements about cooperation between the robots.
 
-The flow for this system is as follows. A robot at position $p_l$, where $l$ represent that this position is with respect to the local frame, detects another robot at position $g_l$. The robot at $p_l$ then calculates its' pose in with respect to the global frame, $p_g$ and then transforms $g_l \rightarrow g_g$. This position $g_g$ is then shared with the robot's in the surrounding environment, which integrate the position into their own localization estimate. This is summarized in \autoref{tab:external_pose}.
-
-\begin{table}
-\centering
-\begin{tabular}{c}
-KF output $\rightarrow p_l, p_g$ \\
-Lidar scan $+ p_l \rightarrow g_l$ \\
-$g_g \rightarrow$ KF input
-\end{tabular}
-\caption{General algorithm for computing external pose.}
-\label{tab:external_pose}
-\end{table}
-
-The following sections how the position estimates $p_l$, $p_g$, $g_l$, and $g_g$ are obtained. All localization estimates will be referenced with an associated coordinate frame. These frames are described in ROS REP-105 \cite{REP_105}. They are the base\_link (aka base\_footprint) frame, which is rigidly fixed to the center of the robot, the odom (aka local) frame, which is continuous but subject to drift over time, and the map (aka global) frame, which is subject to discrete jumps but does not drift over time.
-
-REMOVED LENGTHY COORDINATE FRAME DESCRIPTIONS FROM HERE
+To create this system, we implemented a localization system with the robot\_localization \cite{Moore2014, Moore} package for the Robot Operating System (ROS). We used this UKF implementation for a robot in a planar environment, simplifying our state to an x and y position and yaw angle. This is an realistic representation of our test vehicle, the TurtleBot.
  
-\paragraph{Filters}
-There are two filters operating on the robot to create a whole localization estimate. The first is the \textit{Continuous Filter} (CF), and the second is the \textit{Discrete Filter} (DF). They each perform a separate but related localization task, and combined give a full localization estimate with respect to both the local and global frame of the robot. 
+\subsubsection{Filters}
+There are two UKFs operating on the robot to create a localization estimate. The first is the \textit{Continuous Filter} (CF), and the second is the \textit{Discrete Filter} (DF). They each perform a separate but related localization task, and combined give a full localization estimate with respect to both the local and global frame of the robot.
 
-\subsubsection{Continuous Filter} \label{con_filter_subsubsection}
-The CF calculates the transformation from $odom \rightarrow base\_link$. It receives odometry information from the robot's wheel encoders and IMU. Using this information it publishes the $odom \rightarrow base\_link$ transformation. Another name for the CF is the Self Filter.  
+The coordinate frames used to describe the position estimate are as described in ROS REP-105~\cite{REP_105}. They are the base\_link (aka base\_footprint) frame, which is rigidly fixed to the center of the robot, the odom (aka local) frame, which is continuous but subject to drift over time, and the map (aka global) frame, which is subject to discrete jumps but does not drift over time.
 
-\subsubsection{Discrete Filter} \label{disc_filter_subsubsection}
-The DF calculates the transformation from $map \rightarrow base\_link$. Because the ROS TF package that handles coordinate frame transformations enforces a tree structure where each node can only have one parents, the DF references the $odom \rightarrow base\_link$ transform published by the CF and publishes a transform from $map \rightarrow odom$. The inputs to the DF are the robot's wheel encoder odometry, IMU readings, a GPS, and external poses calculated by other robots. Another name for the DF is the Distributed Filter.
+\paragraph{Continuous Filter} \label{con_filter_subsubsection}
+The CF calculates the transformation from $odom \rightarrow base\_link$. It receives odometry information from the robot's wheel encoders, specifically the x and y velocity and yaw velocity. Using this information it publishes the $odom \rightarrow base\_link$ transformation.
 
+\paragraph{Discrete Filter} \label{disc_filter_subsubsection}
+The DF calculates the transformation from $map \rightarrow base\_link$. Because the ROS system that handles coordinate frame transformations enforces a tree structure where each node can only have one parents, the DF references the $odom \rightarrow base\_link$ transform published by the CF and publishes a transform from $map \rightarrow odom$. The inputs to the DF are the robot's wheel encoder odometry (x, y, and yaw velocity, same as the CF), a GPS, and external poses calculated by other robots. The GPS and external poses are integrated as x and y coordinates in the map frame.
+
+\subsubsection{Communication Structure}
+This distributed system was built as a system of ROS nodes. ROS offers multiple communication options to suit different needs. We implemented a system of action servers and clients to efficiently share sensor data. Each robot has an action server that can receive pose information from other robots. The callback of the action server handles preprocessing of the information and then publishes to the input topic for the discrete filter.
+
+Each robot maintains a list of other robots in its environment, and creates an action client to connect to each. This list can be updated dynamically and adding or removing clients as robots enter or leave the environment is simple. Because calls from an action client to an action server are non-blocking, there is almost no runtime penalty to maintaining a large list of action clients.
+
+Intra-robot communications, e.g. between the filters and the external communications nodes, is handled via the publish/subscribe methodology. This is for simplicity and the low overhead required. More advanced features are not required for these communications.
 
 \section{Experiments}
 
