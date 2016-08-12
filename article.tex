@@ -7,6 +7,7 @@
 \usepackage{amsmath} % For better math in tables and equations
 \usepackage[final]{microtype} % Makes things look better in the end
 \usepackage[hidelinks]{hyperref}
+\usepackage{listings}
 
 % correct bad hyphenation here
 %\hyphenation{op-tical net-works semi-conduc-tor}
@@ -79,15 +80,13 @@ Communication between two agents focuses on confidentiality and integrity which 
 The remainder of the paper will continue as follows. Related work pertaining to integrity, availability, and confidentiality will be presented in \ref{sec:Related Work}. The system design is introduced in section \ref{sec:Methodology} which further discusses the implementation techniques used. We then demonstrate our experiments in section \ref{Results} and the results obtained in section \ref{Results} and gather a conclusion from the results and motivation of the paper in section \ref{Conclusion}.
 
 \section{Related Work} \label{sec:Related Work}
-Chain of trusts, as pertaining to cyber systems, have been introduced in works such as that of~\textcite{adi2009mechatronic} where a DNA ideology was utilized to formulate a clone resistant agent; a Physical Unclonable Function (PUF) was introduced which obtains physical differences between other electronic devices. Similar to this work the extended chain of trust this paper is the HSE which is used to verify other parts of the system much like~\textcite{adi2009mechatronic}.
+Chain of trusts of agents have been introduced in works such as that of~\textcite{adi2009mechatronic} where a DNA ideology was utilized to formulate a clone resistant agent; a Physical Unclonable Function (PUF) was introduced which obtains physical differences between other electronic devices. Similar to this work the extended chain of trust this paper is the HSE which is used to verify other parts of the system much like~\textcite{adi2009mechatronic}. We focus the distributed system aspect and begin through a look into what it means to verity the behavior of another agent.
 
 \subsection{State Estimation}
-State estimation is a fundamental problem for robotics. Without knowing its location, a robot cannot be very useful. One common technique for robot localization is to use a Kalman Filter (KF). The KF is one of the most studied and most heavily utilized Bayesian filter~\cite[39-81]{ProbabilisticRobotics}, and the application of the KF to the task of robot localization has been studied intently~\cite{Localization2003, Mohsin2014}. In~\textcite{Mohsin2014}, it is explained to be so popular for three main reasons. First, it is optimal under certain reasonable and common assumptions, second that it is recursive which is memory efficient, and finally that it relies only on having knowledge of noisy sensor data and not being able to measure certain state variables directly~\cite{Mohsin2014}.
+State estimation is a fundamental problem for robotics. Without knowing its location, a robot cannot be very useful. One common technique for robot localization is to use a Kalman Filter (KF). The KF is one of the most studied and most heavily utilized Bayesian filter~\cite[39-81]{ProbabilisticRobotics}. The application of the KF to the task of robot localization has been studied intently~\cite{Localization2003, Mohsin2014} and can hence be used as an external measure of identification for a robot's behavior. For this paper, we utilize an Unscented Kalman Filter (UKF) for the task of sensor fusion and localization as it provides superior results to that of the EKF \cite{Thrun2002Probabilistic}.
 
-For this paper, we utilize an Unscented Kalman Filter (UKF) for the task of sensor fusion and localization. The UKF provides better accuracy for non-linear systems than a KF or Extended Kalman Filter (EKF) and is less computationally complex than the EKF~\cite{Julier1997}.
-
-\subsection{Secure State Estimation}
-Secure State Estimation requires a focus on all three of the previously mentioned facets of security: Integrity, Availability and Confidentiality. We choose to focus on the first and third of these, Integrity and Confidentiality, for our secure estimation system.
+\subsection{Secure State Estimation for Distributed systems}
+Secure State Estimation in a distributed system requires a focus on all three of the previously mentioned facets of security: Integrity, Availability and Confidentiality. We choose to focus on the first and third of these, Integrity and Confidentiality, for our secure estimation system.
 
 \subsubsection{Integrity}
 Integrity is the question of whether or not the state estimation system's output is accurate. We propose two primary failure modes for integrity: sensor failure and false data injection.
@@ -101,9 +100,9 @@ Sensor failure is not a huge risk for the KF, but  sensor interference is a much
 \subsubsection{Confidentiality: Secure Ad-Hoc Channel Communication}
 There are various works that cover a communications for adhoc networks. ~\textcite{vegh2014securing} uses an extension of the ElGamal algorithm in order to limit the access of agents in the network. In the event that an agent is compromised the information within the decrypted message remains protected through steganography, a method used for hiding information within a text \cite{adi2009mechatronic}. The implementation uses direct agent to agent communication and thus no hierarchy is used; no encrypted broadcast messages are sent and it seems unnecessary to encrypt the information further as it would lead to potential DOS attacks.
 
-Another protocol introduced in Chang et al provides forward secrecy through registration, authentication and password changing involving communication between user, sensor and gateway nodes \cite{chang2016provably}. A long term secret is used for the session and a change in password occurs once the connection is established; however, in a moving environment there may instances when only two nodes will be able to communicate at one time.
+Another protocol introduced in ~\textcite{chang2016provably} provides forward secrecy through registration, authentication and password changing involving communication between user, sensor and gateway nodes. A long term secret is used for the session and a change in password occurs once the connection is established; however, in a moving environment there may instances when only two nodes will be able to communicate at one time.
 
-In the field of automobiles Lyu et al developed a protocol named PBA that is well guarded against high traffic and lossy wireless networks~\cite{lyu2016pba}. The same work addresses DOS attack resistance and stores shortened MAC address signatures for memory consumption and rapid verification~\cite{lyu2016pba}. Lyu et al takes a private public key pair approach which may be prone to further attacks as the base station could update their keys~\cite{lyu2016pba}. Connectivity to the central station after the release is not taken to be necessary in this paper's approach.
+In the field of automobiles~\textcite{lyu2016pba} developed a protocol named PBA that is well guarded against high traffic and lossy wireless networks.~\textcite{lyu2016pba} also addresses Denial of Service (DOS) attack resistance and stores shortened keys for less memory consumption and rapid verification~\cite{lyu2016pba}. ~\textcite{lyu2016pba} takes a private public key pair approach which may be prone to further attacks as the base station could update their keys~\cite{lyu2016pba}. Connectivity to the central station after the release is not taken to be necessary in this paper's approach, yet obtaining accurate clock synchronization for distributed systems such as that surfaced in ~\textcite{Park2016method} is helpful to guard against attacks.
 
 \subsection{Distributed State Estimation}
 As single robot systems coalesce into functional teams, distributed state estimation systems are desirable. Traditionally, in order to increase the accuracy of state estimation, more sensors are added to an individual robot. These additional sensors increase the cost and complexity of the robot. An alternative solution is for robots to share their sensor readings with others in their environment. This increases the amount of sensor data available to each robot, while keeping the number of sensors low on any one robot.
@@ -118,45 +117,49 @@ One truly distributed solution uses consensus filters and multiple KFs~\cite{Olf
 
 \subsection{State Detection}
 
-In order to obtain behavior that is expected and not expected different types of planning have been introduced in literature. Complex environments can be made up of many possible paths which can be computed with strategies such as that of Tallavajhula et al, where each iteration of path planning uses a more complex predictor\cite{tallavajhula2016list}. Each of these predictors' path can be used to build a map of states and corresponding behavior that an agent is able to perform. 
+In order to obtain a road-map of appropriate behaviors an compromised agent can exhibit in a given environment, different types of planning have been introduced in literature. Complex environments can be made up of many possible paths which can be computed with strategies such as that of ~\textcite{tallavajhula2016list}, where each iteration of path planning uses a more complex predictor. Each of these predictors' path can be used to build a map of states and corresponding behavior that an agent is able to perform. Other planning algorithms use specialized planning based on a sub process task such as ~\textcite{ahn2008robust}'s vertical control system, where one module is independently responsible to avoiding objects while more abstract modules can plan according to behavior of objects.
 
-Other planning algorithms use specialized planning based on a sub process task such as Ahn et al's vertical control system, where one module is independently responsible to avoiding objects while more abstract modules can plan according to behavior of objects\cite{ahn2008robust}. Such planning can also be implemented into a map of acceptable behaviors for each state. Multiple goal resolution is attractive as it may still be used in the evaluation of an observed behavior, we will however demonstrate the concept through an avoidance task.
+\subsection{Work Contribution}
+Mapping a robot's trajectory can be done by trivial means, mapping those behaviors to predefined paths can also be seen in <>. The novelty of the work in this paper comes from the view point of utilizing mapped behaviors in order to make predictions on whether the robot is compromised from a robotics perspective whereby security must be considered. Through an agent's detected state we are able to demonstrate a building block for trust within a secured distributed system of robots, one which may be used as a measure to detect whether or not an agent is likely to be compromised by means of sensor failure or false data injection.
 
-\section{Methodology} \label{sec:Methodology}
 
-The method in which the three strategies of interest are implemented are now outlined. The reader should make note the intended chain of trust commences with hardware integrity at its core moving through the various levels of authentication for self-verification. 
-Once the agent can verify its own state it then proceeds to estimate the likelihood that other agents are taking an appropriate actions. 
+\section{System Design} \label{sec:Methodology}
+
+The method in which the three strategies of interest are implemented are now outlined. The reader should make note the intended chain of trust commences with hardware integrity at its core moving through the various levels of authentication for integrity self-verification.
 
 \subsection{Secure Ad-Hoc Channel Communication}
 
-The communication between agents must be encrypted with secret and unique keys. In addition future releases of a robot must be able to communicate with the existing version. There are of course more requisites much as data integrity, privacy of information, and authenticity of the message. We utilize the trust chain's hardware signature in the following protocol.
+The communication between agents must be encrypted with secret and unique keys. In addition future releases of a robot must be able to communicate with the existing versions. A HSE can be used in order to provide security as seen in \autoref{conn_alg}.
 
-A cryptographically random challenge is produced for which there is a globally known one way function to compute a response by means of the originating party's hardware signature, this response is what will be used as input to the encryption cypher of choice. Naturally the receiver will not have the hardware signature of the originator, and thus we must use a unique table for each agent in the system that is created upon creation of the agent itself mapping each MAC with a CR pair. In order to account for extreme table sizes the table can be kept outside of the secure hardware and be encrypted by the hardware key. These keys are very important and therefore, in order to comply with privacy we must be able to change keys as to avoid decryption attempts. For this we will create a churn of keys for every packet that is sent; that is, the sender of a packet sends a new cryptographically generated random C-R pair that the each agent's table may be updated with for the next packet to be sent.
+\begin{lstlisting}[language=Python, frame=single, columns=flexible, label=conn_alg,caption={Algorithm used to compose encrypted payload}]
+def prep_send_packet(skt, dest_mac, payload):
+	CR = get_host_CR(dest_mac)
+	enc_msg = construct_msg(payload,CR[0], CR[1])
+	send_packet(skt, dest_mac, enc_msg)
 	
-In order for the receiving party to know the message decrypted is in fact legitimate there must be text that can be verified. There is also need to know who the message came from due to our authenticity requirement. These can both be satisfied by placing the source MAC in the encrypted portion of the message exchange. To further protection we place the MAC of an agent inside the HSE. Replay attacks can also be a danger, and the method of guarding is having an accurate timestamp.
+def get_host_CR(mac):
+	dest_mac_enc	= HSE.compute_hmac(mac)
+	return HSE.dec_CR(db_enc[dest_mac_enc])
+	
+def construct_message(payload, challenge, response):
+	pickle_array = dumps(payload,2)
+	eth_header = HSE.MAC + get_timestamp() 
+	                        + HSE.new_CR()
+	msg = eth_header + pickle_array
+	return challenge + HSE.enc_msg(response, msg)
+\end{lstlisting}
+
+A cryptographically random challenge is produced for which there is a globally known one way function to compute a response by means of the originating party's hardware signature, this response is what will be used as input to the encryption/decryption cypher of choice. Naturally the receiver will not have the hardware signature of the originator, and thus we must use a unique table entry for each agent in the system that is created upon initializing the agent itself, mapping each MAC address, or agent identity, with a Challenge Response (CR) pair obtained from the trusted source. These keys are very important and therefore, in order to comply with privacy we must be able to change keys as to avoid decryption attempts. For this the use of churn will be utilized whereby a new CR pair to be used will be sent with every packet exchanged; that is, the sender sends a new cryptographically generated random C-R pair that the each agent's table may be updated with for the next packet to be sent. In order for the receiving party to know the message decrypted is in fact legitimate there must be text that can be verified. There is also need to verify who the message came from due to our authenticity requirement as the packet's Ethernet frame can easily be replayed by a man in the middle. These can both be satisfied by placing the source MAC address in the encrypted portion of the message exchange. 
+
+To further protection we place the MAC of an agent inside the HSE to make it part of its immutable identity. Replay attacks can also be a danger, and the method of guarding is having an accurate timestamps.
 	
 New agent authentication work in a similar manner to normal communication but must be initiated by the party with the appropriate and working CR pair. Last but not least, this communication must be implemented like a tunnel where each agent can be uniquely identified by the system.
 
 \subsection{State Detection}
 
-We start our state detection by defining our state and control:
+We start our state detection by defining our local frame state and control as $\dot{x}$ and $\dot{c}$ respectively. The following outlines how the process of obtaining the probability of being compromised from the sensory inputs and the desired method of path planning.
 
-\begin{table}[]
-\label{table_example}
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-State & Control\\
-\hline
-$x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-Where subscript f refers to the local frame forward direction of the agent. The following outlines how the process of obtaining the probability of being compromised from the sensory inputs and the desired method of path planning.
-
-Position and velocity are included in the state in order to make future conjectures about the behavior of the robot. Now that we have a defined state we must gather the state from a combination of sensor data and information obtained from the robot. We use a particle filter for this purpose which we initialize to cover the full area of interest. If an initial position is provided a particle is given that claimed position, but all others are kept in their random position to accommodate for a false given position.
+Now that we have a defined state we must gather the state from a combination of sensor data and information obtained from the robot. We use a particle filter for this purpose which we initialize to cover the full area of interest. If an initial position is provided a particle is given that claimed position, but all others are kept in their random position to accommodate for a false given position.
 	
 We obtain the average of the particles  which is utilized in order to obtain an approximate point nearest to some neighbors on two maps: a compromised map and an uncompromised map. Both maps are comprised of state points along the path planned that are considered compromised or uncompromised as illustrated in figure~\ref{fig:compmaps}.
 	
@@ -207,6 +210,10 @@ The three different concepts were implemented and are detailed below.
 
 \subsection{Secure Ad-Hoc Channel Communication}
 
+Position and velocity are included in the state in order to make future conjectures about the behavior of the robot.
+
+In order to account for extreme table sizes the table can be kept outside of the secure hardware and be encrypted by the hardware key.
+
 In order to communicate between agents within the proximity range the wifi communication channel is analyzed. In order to keep the agent to agent principle we render the IP layer of communication unfit and to a more conservative approach of omitting the IP layer to the network stack.
 
 Use of the data link layer pushed the use of raw sockets; the socket class for python was used instead. The downside however remains in that the socket class requires sudo, or root, access in order to run the node since permissions do not allow sockets to be ran under a regular user. Since giving admin privileges to a node can be considered a threat, there is push to either change the permissions for saw sockets or to change to a new library all together.
@@ -233,10 +240,35 @@ Pickle\_msg out is the received messages from the outside world that are rebroad
 
 The results were, as expected, the node could not publish another type of message on our specified topic. Then, after making the appropriate PickleSend Type we are able to send the message to the subscriber callback in the robot proxy. From there we learn our transmission was successfully encrypted and transmitted through, received decrypted and unicasted to the receiving host. The process is carried on to the test bench of two zed boards where the implementation of response computation must be extendable to both the laptop and board despite architecture. We are able to verify the authentication and individual agent assignment by verifying the test data itself at each end of the connection.
 
-\subsection{State Detection}
-[INSERT RESULTS HERE]
+\subsection{State Estimation}
+
+\begin{table}[] \label{st_ctr_table}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+State & Control\\
+\hline
+$x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Prediction}
+
 
 \section{Results} \label{Results}
+\subsection{Secure Ad-Hoc Channel Communication}
+
+
+
+\subsection{State Estimation}
+
+
+
+\subsection{Prediction}
+
+
 
 \section{Conclusion} \label{Conclusion}
 We have presented three components from a larger chain of trust that is designed to ensure security of not only the agent itself, but also of the group of agents surrounding it.
