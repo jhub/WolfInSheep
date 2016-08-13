@@ -155,32 +155,6 @@ To further protection we place the MAC of an agent inside the HSE to make it par
 	
 New agent authentication work in a similar manner to normal communication but must be initiated by the party with the appropriate and working CR pair. Last but not least, this communication must be implemented like a tunnel where each agent can be uniquely identified by the system.
 
-\subsection{State Detection}
-
-We start our state detection by defining our local frame state and control as $\dot{x}$ and $\dot{c}$ respectively. The following outlines how the process of obtaining the probability of being compromised from the sensory inputs and the desired method of path planning.
-
-Now that we have a defined state we must gather the state from a combination of sensor data and information obtained from the robot. We use a particle filter for this purpose which we initialize to cover the full area of interest. If an initial position is provided a particle is given that claimed position, but all others are kept in their random position to accommodate for a false given position.
-	
-We obtain the average of the particles  which is utilized in order to obtain an approximate point nearest to some neighbors on two maps: a compromised map and an uncompromised map. Both maps are comprised of state points along the path planned that are considered compromised or uncompromised as illustrated in figure~\ref{fig:compmaps}.
-	
-\begin{figure}[]
-\centering
-\includegraphics[width=0.4\textwidth]{Path_comp_uncomp}
-\caption{The left shows the uncompromised map made up of states avoiding some area and the right shows a compromised map where the states do cross the same area. In this case the state obtained from the particle filter mean, demonstrated in blue, would likely yield a more compromised probability}
-\label{fig:compmaps}
-\end{figure}
-	
-A KD tree is used on both maps to find the closest approximate points to each mean found. The few particles gathered by this process are used, by the compromised and uncompromised maps, to form probability density function (PDF) by means of a Kernel density estimation (KDE). This distribution is used to obtain the probability the mean of the particle filter approximation falls within each map. The product of these two probability biases the input to the next iteration to the Bayes equation \ref{fig:Bayes} where b = behavior of the robot, s = state of the robot and c = the probability the robot is compromised.
-
-\begin{equation}
- \beta el =\frac {(P(b,s|c)P(c)} {(P(b,s|c)P(c) + 
- P(b,s|c' )P(c' ))} 
- \label{fig:Bayes}
-\end{equation}
-
-This implementation provides a way a way for the change in behavior, that is from uncompromised to compromised or vice versa, to impact the current belief.
-
-
 \subsection{Distributed State Estimation}
 We propose a distributed system where robot's share their sensor information with other robot's in their environment in order to increase state estimation accuracy. This system allows for robots to enter or leave the system at any time, and does not make any assumptions or requirements about cooperation between the robots.
 
@@ -203,6 +177,30 @@ This distributed system was built as a system of ROS nodes. ROS offers multiple 
 Each robot maintains a list of other robots in its environment, and creates an action client to connect to each. This list can be updated dynamically and adding or removing clients as robots enter or leave the environment is simple. Because calls from an action client to an action server are non-blocking, there is almost no runtime penalty to maintaining a large list of action clients.
 
 Intra-robot communications, e.g. between the filters and the external communications nodes, is handled via the publish/subscribe methodology. This is for simplicity and the low overhead required. More advanced features are not required for these communications.
+
+\subsection{State Detection}
+
+We start our state detection by defining our local frame state and control as $\dot{x}$ and $\dot{c}$ respectively. The following outlines how the process of obtaining the probability of being compromised from the sensory inputs and the desired method of path planning.
+
+Now that we have a defined state we must gather the state from a combination of sensor data and information obtained from the robot. We use a particle filter for this purpose which we initialize as to cover the full state space. Particle filters are useful as they represent the posterior belief by a set of random state samples drawn from its posterior\cite{Thrun2002Probabilistic}. If an initial state is provided a particle is placed that claimed state, but all others are kept in their random position to accommodate for a possible false given position.
+	
+We obtain the average of the particles  which is utilized in order to obtain an approximate point nearest to some neighbors on two maps: a compromised map and an uncompromised map. Both maps are comprised of state points along the path planned that are considered compromised or uncompromised as illustrated in ~\autoref{fig:compmaps}.
+	
+\begin{figure}[]
+\centering
+\includegraphics[width=0.4\textwidth]{Path_comp_uncomp}
+\caption{The left shows the uncompromised map made up of states avoiding some area and the right shows a compromised map where the states do cross the same area. In this case the state obtained from the particle filter mean, demonstrated in blue, would likely yield a more compromised probability}
+\label{fig:compmaps}
+\end{figure}
+	
+A KD tree is used on both maps to find the closest approximate points to each mean found. The few particles gathered by this process are used, by the compromised and uncompromised maps, to form Probability Density Function (PDF) by means of a Kernel Density Estimation (KDE). 
+\begin{equation}
+ P(c,b|s) =\frac {(P(b,s|c)P(c)} {(P(b,s|c)P(c) + 
+ P(b,s|c' )P(c' ))} 
+ \label{fig:Bayes}
+\end{equation}
+This distribution is used to obtain the probability the mean of the particle filter approximation falls within each map. The product of these two probability biases the input to the next iteration to the Bayes equation \ref{fig:Bayes} where b = behavior of the robot, s = state of the robot and c = the probability the robot is compromised \cite{Thrun2002Probabilistic}. This implementation provides a way for the change in behavior to impact the current belief.
+
 
 \section{Experiments} \label{Experiments}
 
@@ -254,7 +252,7 @@ $x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
 \end{center}
 \end{table}
 
-\subsection{Prediction}
+\subsection{State Detection}
 
 
 \section{Results} \label{Results}
@@ -266,7 +264,7 @@ $x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
 
 
 
-\subsection{Prediction}
+\subsection{State Detection}
 
 
 
