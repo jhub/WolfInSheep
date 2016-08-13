@@ -210,21 +210,22 @@ The three different concepts were implemented and are detailed below.
 
 In order to keep the agent to agent principle we render the IP layer of communication unfit and utilize MAC addressing directly, omitting the IP layer to the network stack. Use of the data link layer pushed the use of raw sockets; the socket class for python was used instead. The socket class required root access in order to run the node since permissions do not allow sockets to be ran under a regular user. Since giving admin privileges to a node can be considered a threat, there is push to either change the permissions for saw sockets or to change to a new library all together in future work.
 
-The python code was loaded onto two Zedboards and a laptop, all running Ubuntu 14.04 LTS with a full ROS install, and connectivity was established. We first start with obtaining the database from the 'central base' module created as seen in figure~\autoref{fig:TopicIntr1}. The directory where the database file resided was located and moved to the correct agent where the robot\_proxy was executed.
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{TopicIntr1}
-\caption{The initial communication with the central frame is made here. Each database, in its encrypted form, is created to be placed with each corresponding agent.}
+\caption{The initial communication with the central frame is made here. Each database, in its encrypted form, is created to be placed with each corresponding agent. To do so an db\_update message is sent to the central base in order to update the central base's CR table. A request can then be made to obtain the CR table for an individual already registered in the Central base.}
 \label{fig:TopicIntr1}
 \end{figure}
+
+
+The python code was loaded onto two Zedboards and a laptop, all running Ubuntu 14.04 LTS with a full ROS install, and connectivity was established. We first start with obtaining the database from the 'central base' module created as seen in figure~\autoref{fig:TopicIntr1}. The directory where the database file resided was located and moved to the correct agent where the robot\_proxy was executed.
 
 A new connection is detected and notified via a list in topic /Host\_lists which signifies a working connection. Now, in order to test the appropriate data the testing node Simple\_calc.py was used as seen in Figure~\autoref{fig:TopicIntr2}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{TopicIntr2}
-\caption{Topic Interaction with node- As new agents are populated, the external host lists are updated. Hence, when the topic handler retrieves the Host Lists from all the connection objects, the nodes in the current system will have an accurate overview of which topics are being published elsewhere based on the MAC of each external agent.}
+\caption{Topic Interaction with node- As new agents are populated, the external host lists are updated. Hence, when the topic handler retrieves the Host Lists from all the connection objects, the nodes in the current system will have an accurate overview of which topics are being published elsewhere based on the MAC of each external agent. The messages coming from other agents will come through the message out topic for any ROS node to subscribe to.}
 \label{fig:TopicIntr2}
 \end{figure}
 
