@@ -188,8 +188,8 @@ We obtain the average of the particles  which is utilized in order to obtain an 
 	
 \begin{figure}[]
 \centering
-\includegraphics[width=0.4\textwidth]{Path_comp_uncomp}
-\caption{The left shows the uncompromised map made up of states avoiding some area and the right shows a compromised map where the states do cross the same area. In this case the state obtained from the particle filter mean, demonstrated in blue, would likely yield a more compromised probability}
+\includegraphics[width=0.4\textwidth]{Path_comp}
+\caption{The left shows the uncompromised map made up of states avoiding some area while the right shows a compromised map where the states do cross the area. In this case the state obtained from the particle filter mean at the star would likely yield a more compromised probability}
 \label{fig:compmaps}
 \end{figure}
 	
@@ -208,11 +208,23 @@ The three different concepts were implemented and are detailed below.
 
 \subsection{Secure Ad-Hoc Channel Communication}
 
-Position and velocity are included in the state in order to make future conjectures about the behavior of the robot.
+We begin by defining our state and control in \autoref{abs_st_ctr_table}. Position and velocity are included in the state in order to make future conjectures about the behavior of the robot.
+
+\begin{table}[] \label{abs_st_ctr_table} \caption{Implemented state and control}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+State & Control\\
+\hline
+$x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 In order to account for extreme table sizes the table can be kept outside of the secure hardware and be encrypted by the hardware key.
 
-In order to communicate between agents within the proximity range the wifi communication channel is analyzed. In order to keep the agent to agent principle we render the IP layer of communication unfit and to a more conservative approach of omitting the IP layer to the network stack.
+In order to keep the agent to agent principle we render the IP layer of communication unfit and utilize a more conservative approach of omitting the IP layer to the network stack.
 
 Use of the data link layer pushed the use of raw sockets; the socket class for python was used instead. The downside however remains in that the socket class requires sudo, or root, access in order to run the node since permissions do not allow sockets to be ran under a regular user. Since giving admin privileges to a node can be considered a threat, there is push to either change the permissions for saw sockets or to change to a new library all together.
 
