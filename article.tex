@@ -77,7 +77,7 @@ There are three core goals for the security of any cyber-physical system: integr
 
 Communication between two agents focuses on confidentiality and integrity which can both be accounted for through proper encryption and meta-data inside the encrypted message. A challenge-response system is implemented in this paper which changes on every round trip time providing fresh keys for the uniquely encrypted payload. Timestamp and source mac address fields inside the encrypted payload not only ensure the identity of the sender, but also the timing integrity. Once communication is secured, an adversary can still distort the sensor data of an agent however. An agent in the group can detect the abnormality by comparing the state and behavior combination taken to that of an established \textit{usage envelope}, a pre-computed state trajectory map. This map allows for a large variety of planning algorithms to be used. The state of the agent is computed through the use of redundant measurements in the system which allow for an agents inside a trusted set to verify each other's locations.
 
-The remainder of the paper will continue as follows. Related work pertaining to integrity, availability, and confidentiality will be presented in \ref{sec:Related Work}. The system design is introduced in section \ref{sec:Methodology} which further discusses the implementation techniques used. We then demonstrate our experiments in section \ref{Results} and the results obtained in section \ref{Results} and gather a conclusion from the results and motivation of the paper in section \ref{Conclusion}.
+The remainder of the paper will continue as follows. Related work pertaining to integrity, availability, and confidentiality will be presented in \autoref{sec:Related Work}. The system design is introduced in section \autoref{sec:Methodology} which further discusses the implementation techniques used. We then demonstrate our experiments in section \autoref{Results} and the results obtained in section \autoref{Results} and gather a conclusion from the results and motivation of the paper in section \autoref{Conclusion}.
 
 \section{Related Work} \label{sec:Related Work}
 Chain of trusts of agents have been introduced in works such as that of~\textcite{adi2009mechatronic} where a DNA ideology was utilized to formulate a clone resistant agent; a Physical Unclonable Function (PUF) was introduced which obtains physical differences between other electronic devices. Similar to this work the extended chain of trust this paper is the HSE which is used to verify other parts of the system much like~\textcite{adi2009mechatronic}. We focus the distributed system aspect and begin through a look into what it means to verity the behavior of another agent.
@@ -153,7 +153,7 @@ A cryptographically random challenge is produced for which there is a globally k
 
 To further protection we place the MAC of an agent inside the HSE to make it part of its immutable identity. Replay attacks can also be a danger, and the method of guarding is having an accurate timestamps.
 	
-New agent authentication work in a similar manner to normal communication but must be initiated by the party with the appropriate and working CR pair. Last but not least, this communication must be implemented like a tunnel where each agent can be uniquely identified by the system.
+New agent authentication work in a similar manner to normal communication but must be initiated by the party with the appropriate and working CR pair. In order to account for extreme table sizes the table can be kept outside of the secure hardware and be encrypted by the hardware key.
 
 \subsection{Distributed State Estimation}
 We propose a distributed system where robot's share their sensor information with other robot's in their environment in order to increase state estimation accuracy. This system allows for robots to enter or leave the system at any time, and does not make any assumptions or requirements about cooperation between the robots.
@@ -199,7 +199,7 @@ A KD tree is used on both maps to find the closest approximate points to each me
  P(b,s|c' )P(c' ))} 
  \label{fig:Bayes}
 \end{equation}
-This distribution is used to obtain the probability the mean of the particle filter approximation falls within each map. The product of these two probability biases the input to the next iteration to the Bayes equation \ref{fig:Bayes} where b = behavior of the robot, s = state of the robot and c = the probability the robot is compromised \cite{Thrun2002Probabilistic}. This implementation provides a way for the change in behavior to impact the current belief.
+This distribution is used to obtain the probability the mean of the particle filter approximation falls within each map. The product of these two probability biases the input to the next iteration to the Bayes equation \autoref{fig:Bayes} where b = behavior of the robot, s = state of the robot and c = the probability the robot is compromised \cite{Thrun2002Probabilistic}. This implementation provides a way for the change in behavior to impact the current belief.
 
 
 \section{Experiments} \label{Experiments}
@@ -208,38 +208,20 @@ The three different concepts were implemented and are detailed below.
 
 \subsection{Secure Ad-Hoc Channel Communication}
 
-We begin by defining our state and control in \autoref{abs_st_ctr_table}. Position and velocity are included in the state in order to make future conjectures about the behavior of the robot.
+In order to keep the agent to agent principle we render the IP layer of communication unfit and utilize MAC addressing directly, omitting the IP layer to the network stack. Use of the data link layer pushed the use of raw sockets; the socket class for python was used instead. The socket class required root access in order to run the node since permissions do not allow sockets to be ran under a regular user. Since giving admin privileges to a node can be considered a threat, there is push to either change the permissions for saw sockets or to change to a new library all together in future work.
 
-\begin{table}[] \label{abs_st_ctr_table} \caption{Implemented state and control}
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-State & Control\\
-\hline
-$x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
+The python code was loaded onto two Zedboards and a laptop, all running Ubuntu 14.04 LTS with a full ROS install, and connectivity was established. We first start with obtaining the database from the 'central base' module created as seen in figure~\autoref{fig:TopicIntr1}. The directory where the database file resided was located and moved to the correct agent where the robot\_proxy was executed.
 
-In order to account for extreme table sizes the table can be kept outside of the secure hardware and be encrypted by the hardware key.
-
-In order to keep the agent to agent principle we render the IP layer of communication unfit and utilize a more conservative approach of omitting the IP layer to the network stack.
-
-Use of the data link layer pushed the use of raw sockets; the socket class for python was used instead. The downside however remains in that the socket class requires sudo, or root, access in order to run the node since permissions do not allow sockets to be ran under a regular user. Since giving admin privileges to a node can be considered a threat, there is push to either change the permissions for saw sockets or to change to a new library all together.
-
-The python code was first loaded onto two different laptops, both running Ubuntu 14.04 LTS with a full ROS install, and connectivity was established. We first start with obtaining the database from the 'central base' module created as seen in figure~\ref{fig:TopicIntr1}. The directory where the database file resided was located and moved to the correct agent where the robot\_proxy was executed.
-
-\begin{figure}[]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{TopicIntr1}
 \caption{The initial communication with the central frame is made here. Each database, in its encrypted form, is created to be placed with each corresponding agent.}
 \label{fig:TopicIntr1}
 \end{figure}
 
-A new connection is detected and notified via a list in topic /Host\_lists which signifies a working connection. Now, in order to test the appropriate data the testing node Simple\_calc.py was used as seen in Figure~\ref{fig:TopicIntr2}.
+A new connection is detected and notified via a list in topic /Host\_lists which signifies a working connection. Now, in order to test the appropriate data the testing node Simple\_calc.py was used as seen in Figure~\autoref{fig:TopicIntr2}.
 
-\begin{figure}[]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{TopicIntr2}
 \caption{Topic Interaction with node- As new agents are populated, the external host lists are updated. Hence, when the topic handler retrieves the Host Lists from all the connection objects, the nodes in the current system will have an accurate overview of which topics are being published elsewhere based on the MAC of each external agent.}
@@ -251,25 +233,29 @@ Pickle\_msg out is the received messages from the outside world that are rebroad
 The results were, as expected, the node could not publish another type of message on our specified topic. Then, after making the appropriate PickleSend Type we are able to send the message to the subscriber callback in the robot proxy. From there we learn our transmission was successfully encrypted and transmitted through, received decrypted and unicasted to the receiving host. The process is carried on to the test bench of two zed boards where the implementation of response computation must be extendable to both the laptop and board despite architecture. We are able to verify the authentication and individual agent assignment by verifying the test data itself at each end of the connection.
 
 \subsection{State Estimation}
+We begin by defining our state and control in \autoref{abs_st_ctr_table}. Position and velocity are included in the state in order to make future conjectures about the behavior of the robot.
 
-\begin{table}[] \label{st_ctr_table}
+\begin{table}[h] \label{abs_st_ctr_table} \caption{Implemented state and control}
 \begin{center}
-\begin{tabular}{|c|c|}
-\hline
+\begin{tabular}{c|c}
 State & Control\\
 \hline
 $x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
-\hline
 \end{tabular}
 \end{center}
 \end{table}
+
 
 \subsection{State Detection}
 
 
 \section{Results} \label{Results}
-\subsection{Secure Ad-Hoc Channel Communication}
+After the implementation previously mentioned several metrics were taken on the three components developed.
 
+\subsection{Secure Ad-Hoc Channel Communication}
+Band width measurements were conducted via a sample node using the payload obtained at the final destination. That is, \autoref{bandwith_one} demonstrates the effective bandwidth when only two agents connected at the same time.
+
+\autoref{bandwidth_two} provides a look at the scenario were there is much traffic in the medium of connection itself.
 
 
 \subsection{State Estimation}
@@ -277,7 +263,9 @@ $x,y,\theta,v_f,v_\theta$ & $a_f,a_\theta$\\
 
 
 \subsection{State Detection}
+To verify the system's functionality the first set of results with no particle filter and noiseless data being received can be seen by \autoref{stat_dect_one}. 
 
+The more interesting view however is that of \autoref{stat_dect_two} where by the particle filter is introduced and the position is not given from exact data but the state estimation itself.
 
 
 \section{Conclusion} \label{Conclusion}
